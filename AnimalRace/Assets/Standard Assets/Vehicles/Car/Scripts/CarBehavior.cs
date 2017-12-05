@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Vehicles.Car;
 
 public class CarBehavior : MonoBehaviour
@@ -15,6 +16,8 @@ public class CarBehavior : MonoBehaviour
     private Transform missileLauncher;
     [SerializeField]
     private string FIRE_AXIS;
+    [SerializeField]
+    Text carText;
     public PowerUpsHolderObject PowerUps { get { return powerUps; } }
 
     // Use this for initialization
@@ -22,6 +25,7 @@ public class CarBehavior : MonoBehaviour
     {
         lapCounter = 0;
         activeCheckpoints = new bool[] { false, false, false };
+        carText.text = "";
     }
 
     internal void ChangeMaxSpeed(float TURBO_MULTIPLIER)
@@ -174,11 +178,14 @@ public class CarBehavior : MonoBehaviour
     private void CheckIfRaceIsOver(Collider checkPoint)
     {
 
-        if(lapCounter == 2)
+        if(lapCounter == 1)
         {
             int position = checkPoint.GetComponent<CheckPointBehavior>().nextPos;
-            print("POSICION: " + position + "/2");
+            carText.text = position + "/2";
             checkPoint.GetComponent<CheckPointBehavior>().SendMessage("AddNextPos", 1);
+            //this.GetComponent<Rigidbody>().freezeRotation(true);
+            //this.GetComponent<Rigidbody>().freezeRotation(1);
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ| RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
         }
     }
 

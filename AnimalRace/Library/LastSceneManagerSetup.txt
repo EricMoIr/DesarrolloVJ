@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SampleScenes/Scenes/MenuPrincipal.unity
+- path: Assets/SampleScenes/Scenes/PistaUno.unity
   isLoaded: 1
   isActive: 1
