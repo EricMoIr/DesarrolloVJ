@@ -1,5 +1,5 @@
-C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\Assembly-CSharp.dll
-C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\nunit.framework.dll
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\UnityEditor.dll
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\UnityEngine.Analytics.dll
@@ -17,7 +17,6 @@ C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\Unity.UNetWeav
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\Unity.CecilTools.dll
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\Mono.Cecil.Pdb.dll
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\Mono.Cecil.Mdb.dll
-C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\UnityEngine.xml
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\UnityEditor.xml
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\UnityEngine.UI.xml
@@ -27,7 +26,7 @@ C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\nunit.framewor
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\UnityEngine.Analytics.xml
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\Diego\Downloads\AnimalRace turbo funciona\Temp\bin\Debug\UnityEngine.VR.xml
-C:\Users\Diego\Downloads\AnimalRace turbo funciona\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
-C:\Users\Diego\Downloads\AnimalRace turbo funciona\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
-C:\Users\Diego\Downloads\AnimalRace turbo funciona\obj\Debug\Assembly-CSharp.dll
-C:\Users\Diego\Downloads\AnimalRace turbo funciona\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Diego\Downloads\AnimalRace turbo funciona\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Downloads\AnimalRace turbo funciona\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
+C:\Users\Diego\Downloads\AnimalRace turbo funciona\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Diego\Downloads\AnimalRace turbo funciona\obj\Debug\Assembly-CSharp-firstpass.pdb
