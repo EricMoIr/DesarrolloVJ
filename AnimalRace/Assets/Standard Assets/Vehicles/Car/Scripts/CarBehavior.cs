@@ -17,7 +17,12 @@ public class CarBehavior : MonoBehaviour
     [SerializeField]
     private string FIRE_AXIS;
     [SerializeField]
-    Text carText;
+    Text middleText;
+    [SerializeField]
+    Text timerText;
+    [SerializeField]
+    Text lapText;
+    float lapTime;
     public PowerUpsHolderObject PowerUps { get { return powerUps; } }
 
     // Use this for initialization
@@ -25,7 +30,10 @@ public class CarBehavior : MonoBehaviour
     {
         lapCounter = 0;
         activeCheckpoints = new bool[] { false, false, false };
-        carText.text = "";
+        middleText.text = "";
+        timerText.text = "";
+        lapText.text = "Lap: 1/2";
+        lapTime = 0f;
     }
 
     internal void ChangeMaxSpeed(float TURBO_MULTIPLIER)
@@ -39,6 +47,17 @@ public class CarBehavior : MonoBehaviour
     {
         FireSpecialPower();
         ReduceAbnormalStatusTime();
+        if(lapCounter < 2)
+        {
+            lapTime += Time.deltaTime;
+            int milliseconds = (int)(lapTime * 1000) % 1000;
+            int seconds = (int)(lapTime % 60);
+            int minutes = (int)(lapTime / 60) % 60;
+
+            string timeText = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds,milliseconds);
+            timerText.text = timeText;
+        }
+        
     }
 
     void OnTriggerEnter(Collider otherObject)
@@ -162,8 +181,22 @@ public class CarBehavior : MonoBehaviour
     private void AddLap(Collider checkPoint)
     {
         lapCounter++;
+        if (lapCounter < 2)
+        {
+            middleText.text = "Lap: " + (lapCounter + 1) + "/2";
+            lapText.text = "";
+            StartCoroutine(ResetTexts());
+        } 
         ResetCheckPointList();
         CheckIfRaceIsOver(checkPoint);
+
+    }
+
+    IEnumerator ResetTexts()
+    {
+        yield return new WaitForSeconds(3);
+        middleText.text = "";
+        lapText.text = "Lap: " + (lapCounter + 1) + "/2";
 
     }
 
@@ -178,10 +211,10 @@ public class CarBehavior : MonoBehaviour
     private void CheckIfRaceIsOver(Collider checkPoint)
     {
 
-        if(lapCounter == 1)
+        if(lapCounter == 2)
         {
             int position = checkPoint.GetComponent<CheckPointBehavior>().nextPos;
-            carText.text = position + "/2";
+            middleText.text = position + "/2";
             checkPoint.GetComponent<CheckPointBehavior>().SendMessage("AddNextPos", 1);
             //this.GetComponent<Rigidbody>().freezeRotation(true);
             //this.GetComponent<Rigidbody>().freezeRotation(1);
