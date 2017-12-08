@@ -10,18 +10,25 @@ public class CarBehavior : MonoBehaviour
     [SerializeField]
     private PowerUpsHolderObject powerUps;
     private int lapCounter;
+    private int nextCheckPoint;
+    private float nextCheckPointDistance;
     private bool[] activeCheckpoints;
     private List<AbnormalStatus> abnormalStatuses = new List<AbnormalStatus>();
     private SpecialPower myPowerUp;
     private Transform missileLauncher;
+    private bool controlsEnabled;
     [SerializeField]
     private string FIRE_AXIS;
+    [SerializeField]
+    int lapNumbers;
     [SerializeField]
     Text middleText;
     [SerializeField]
     Text timerText;
     [SerializeField]
     Text lapText;
+    //[SerializeField]
+    //Text countDownText;
     float lapTime;
     public PowerUpsHolderObject PowerUps { get { return powerUps; } }
 
@@ -30,10 +37,14 @@ public class CarBehavior : MonoBehaviour
     {
         lapCounter = 0;
         activeCheckpoints = new bool[] { false, false, false };
-        middleText.text = "";
+        middleText.text = "3";
         timerText.text = "";
-        lapText.text = "Lap: 1/2";
+        lapText.text = "Lap: 1/"+lapNumbers;
         lapTime = 0f;
+        controlsEnabled = false;
+        nextCheckPoint = 1;
+        StartCoroutine(BeginCountDown());
+
     }
 
     internal void ChangeMaxSpeed(float TURBO_MULTIPLIER)
@@ -47,7 +58,15 @@ public class CarBehavior : MonoBehaviour
     {
         FireSpecialPower();
         ReduceAbnormalStatusTime();
-        if(lapCounter < 2)
+        if (controlsEnabled)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        }
+        else
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        }
+        if (lapCounter < lapNumbers && controlsEnabled)
         {
             lapTime += Time.deltaTime;
             int milliseconds = (int)(lapTime * 1000) % 1000;
@@ -57,6 +76,7 @@ public class CarBehavior : MonoBehaviour
             string timeText = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds,milliseconds);
             timerText.text = timeText;
         }
+        nextCheckPointDistance = CalculateDistanceToNextCheckPoint();
         
     }
 
@@ -64,6 +84,12 @@ public class CarBehavior : MonoBehaviour
     {
         PowerUpBoxTriggerEnter(otherObject);
         CheckpointTriggerEnter(otherObject);
+    }
+
+    float CalculateDistanceToNextCheckPoint()
+    {
+        GameObject nextCPoint = GameObject.FindGameObjectsWithTag("CheckPoint_"+nextCheckPoint)[0];
+        return Vector3.Distance(transform.position, nextCPoint.transform.position);
     }
 
     private void CheckpointTriggerEnter(Collider otherObject)
@@ -74,23 +100,32 @@ public class CarBehavior : MonoBehaviour
             switch (checkPointNumber)
             {
                 case "1":
-                    if (!activeCheckpoints[1] && !activeCheckpoints[2])
+                    if (activeCheckpoints[1] && activeCheckpoints[2])
                     {
                         activeCheckpoints[0] = true;
+                        AddLap(otherObject);
                     }
+                    nextCheckPoint = 2;
                     break;
                 case "2":
-                    if (activeCheckpoints[0] && !activeCheckpoints[2])
+                    if (!activeCheckpoints[0] && !activeCheckpoints[2])
                     {
                         activeCheckpoints[1] = true;
                     }
+                    nextCheckPoint = 3;
                     break;
                 case "3":
-                    if (activeCheckpoints[0] && activeCheckpoints[1])
+                    if (!activeCheckpoints[0] && activeCheckpoints[1])
                     {
                         activeCheckpoints[2] = true;
-                        AddLap(otherObject);
                     }
+                    nextCheckPoint = 4;
+                    break;
+                case "4":
+                    nextCheckPoint = 5;
+                    break;
+                case "5":
+                    nextCheckPoint = 1;
                     break;
             }
         }
@@ -181,9 +216,9 @@ public class CarBehavior : MonoBehaviour
     private void AddLap(Collider checkPoint)
     {
         lapCounter++;
-        if (lapCounter < 2)
+        if (lapCounter < lapNumbers)
         {
-            middleText.text = "Lap: " + (lapCounter + 1) + "/2";
+            middleText.text = "Lap: " + (lapCounter + 1) + "/"+lapNumbers;
             lapText.text = "";
             StartCoroutine(ResetTexts());
         } 
@@ -196,7 +231,22 @@ public class CarBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         middleText.text = "";
-        lapText.text = "Lap: " + (lapCounter + 1) + "/2";
+        lapText.text = "Lap: " + (lapCounter + 1) + "/"+lapNumbers;
+
+    }
+
+    IEnumerator BeginCountDown()
+    {
+        yield return new WaitForSeconds(1);
+        middleText.text = "2";
+        yield return new WaitForSeconds(1);
+        middleText.text = "1";
+        yield return new WaitForSeconds(1);
+        middleText.text = "GO!";
+        controlsEnabled = true;
+        yield return new WaitForSeconds(3);
+        middleText.text = "";
+
 
     }
 
@@ -211,14 +261,28 @@ public class CarBehavior : MonoBehaviour
     private void CheckIfRaceIsOver(Collider checkPoint)
     {
 
-        if(lapCounter == 2)
+        if(lapCounter == lapNumbers)
         {
             int position = checkPoint.GetComponent<CheckPointBehavior>().nextPos;
-            middleText.text = position + "/2";
+            if(position == 1)
+            {
+                middleText.text = "WINNER!";
+            }
+            if(position == 2)
+            {
+                middleText.text = position + "nd";
+            }
+            if (position == 3)
+            {
+                middleText.text = position + "rd";
+            }
+            if (position == 4)
+            {
+                middleText.text = position + "th";
+
+            }
             checkPoint.GetComponent<CheckPointBehavior>().SendMessage("AddNextPos", 1);
-            //this.GetComponent<Rigidbody>().freezeRotation(true);
-            //this.GetComponent<Rigidbody>().freezeRotation(1);
-            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ| RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+            controlsEnabled = false;
         }
     }
 

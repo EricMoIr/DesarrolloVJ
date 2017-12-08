@@ -9,6 +9,8 @@ TagManager:
   - CheckPoint_1
   - CheckPoint_2
   - PowerUpBox
+  - CheckPoint_4
+  - CheckPoint_5
   layers:
   - Default
   - TransparentFX
