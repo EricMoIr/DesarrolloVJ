@@ -201,8 +201,8 @@ MonoBehaviour:
     y: 0
     width: 636
     height: 364
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -254,8 +254,8 @@ MonoBehaviour:
     y: 364
     width: 1366
     height: 271
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 100, y: 121}
+  m_MaxSize: {x: 4000, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 18}
@@ -365,10 +365,10 @@ MonoBehaviour:
     width: 325
     height: 343
   m_TreeViewState:
-    scrollPos: {x: 0, y: 10}
-    m_SelectedIDs: 9621feff
-    m_LastClickedID: -122474
-    m_ExpandedIDs: e6fbffff000000006e2e0000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: c2f0ffff
+    m_LastClickedID: -3902
+    m_ExpandedIDs: e6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -418,14 +418,14 @@ MonoBehaviour:
     width: 632
     height: 343
   m_SceneLighting: 1
-  lastFramingTime: 6796.92482385767
+  lastFramingTime: 13775.296092932515
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 150.24133, y: 41.784668, z: 493.20312}
+    m_Target: {x: 156.73, y: 41.42, z: 491.82}
     speed: 2
-    m_Value: {x: 150.24133, y: 41.784668, z: 493.20312}
+    m_Value: {x: 156.73, y: 41.42, z: 491.82}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -440,21 +440,21 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 0
+      m_Target: 1
       speed: 2
-      m_Value: 0
+      m_Value: 1
     zGrid:
       m_Target: 0
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.09285485, y: -0.016436176, z: 0.0015421456, w: 0.9955651}
+    m_Target: {x: 0.1077916, y: -0.0074655795, z: 0.00082104444, w: 0.99418974}
     speed: 2
-    m_Value: {x: 0.09285279, y: -0.016435811, z: 0.0015421114, w: 0.99554306}
+    m_Value: {x: 0.10778682, y: -0.0074652485, z: 0.00082100806, w: 0.99414563}
   m_Size:
-    m_Target: 29.856625
+    m_Target: 52.177845
     speed: 2
-    m_Value: 29.856625
+    m_Value: 52.177845
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -610,19 +610,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Standard Assets/Fonts/OpenSans
+    - Assets/Standard Assets/Vehicles/Car/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Standard Assets/Fonts/OpenSans
+  - Assets/Standard Assets/Vehicles/Car/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Diego\Downloads\ORT\Desarrollo de Videojuegos I\NuevoRepo\AnimalRace
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 167}
-    m_SelectedIDs: 4a2d0000
-    m_LastClickedID: 11594
-    m_ExpandedIDs: 0000000066260000a02600001e2800000a290000762a0000042c0000202c0000862c0000162d00001e32000020320000
+    scrollPos: {x: 0, y: 459}
+    m_SelectedIDs: ac280000
+    m_LastClickedID: 10412
+    m_ExpandedIDs: 0000000066260000a02600001e2800000a290000762a0000042c0000202c0000862c0000162d0000363200003832000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -650,7 +650,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000066260000a02600001e2800000a290000762a0000042c0000202c0000862c0000162d00001e32000020320000
+    m_ExpandedIDs: 0000000066260000a02600001e2800000a290000762a0000042c0000202c0000862c0000162d00003632000038320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -675,8 +675,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c82e0000
-    m_LastClickedInstanceID: 11976
+    m_SelectedInstanceIDs: c2f0ffff
+    m_LastClickedInstanceID: -3902
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300001e360000aa3900004e2f0000ac270000726600001210ffff8c270000382a00001c27000000000000102b0000
     m_RenameOverlay:

@@ -11,6 +11,14 @@ TagManager:
   - PowerUpBox
   - CheckPoint_4
   - CheckPoint_5
+  - CheckPoint_6
+  - CheckPoint_7
+  - CheckPoint_8
+  - CheckPoint_10
+  - CheckPoint_9
+  - CheckPoint_11
+  - CheckPoint_12
+  - RaceManager
   layers:
   - Default
   - TransparentFX

@@ -6,9 +6,10 @@ public class CheckPointBehavior : MonoBehaviour {
 
     public int nextPos;
     public bool isLast;
+    public bool controlsLap;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         nextPos = 1;
 	}
 	

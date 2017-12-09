@@ -17,6 +17,7 @@ public class CarBehavior : MonoBehaviour
     private SpecialPower myPowerUp;
     private Transform missileLauncher;
     private bool controlsEnabled;
+    private int currentPosition;
     [SerializeField]
     private string FIRE_AXIS;
     [SerializeField]
@@ -27,8 +28,8 @@ public class CarBehavior : MonoBehaviour
     Text timerText;
     [SerializeField]
     Text lapText;
-    //[SerializeField]
-    //Text countDownText;
+    [SerializeField]
+    Text positionText;
     float lapTime;
     public PowerUpsHolderObject PowerUps { get { return powerUps; } }
 
@@ -44,7 +45,7 @@ public class CarBehavior : MonoBehaviour
         controlsEnabled = false;
         nextCheckPoint = 1;
         StartCoroutine(BeginCountDown());
-
+        currentPosition = 1;
     }
 
     internal void ChangeMaxSpeed(float TURBO_MULTIPLIER)
@@ -52,6 +53,12 @@ public class CarBehavior : MonoBehaviour
         CarController stolenScript = gameObject.GetComponent<CarController>();
         stolenScript.Torque = stolenScript.Torque * TURBO_MULTIPLIER;
     }
+
+    public void SetCurrentPosition(int newPos)
+    {
+        currentPosition = newPos;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -77,7 +84,9 @@ public class CarBehavior : MonoBehaviour
             timerText.text = timeText;
         }
         nextCheckPointDistance = CalculateDistanceToNextCheckPoint();
-        
+        GameObject raceManager = GameObject.FindGameObjectsWithTag("RaceManager")[0];
+        int numberOfPlayers = raceManager.GetComponent<RaceManager>().GetCarNumbers();
+        positionText.text ="POS: " + currentPosition.ToString() + "/"+ numberOfPlayers;
     }
 
     void OnTriggerEnter(Collider otherObject)
@@ -114,18 +123,18 @@ public class CarBehavior : MonoBehaviour
                     }
                     nextCheckPoint = 3;
                     break;
-                case "3":
+                case "8":
                     if (!activeCheckpoints[0] && activeCheckpoints[1])
                     {
                         activeCheckpoints[2] = true;
                     }
-                    nextCheckPoint = 4;
+                    nextCheckPoint = 9;
                     break;
-                case "4":
-                    nextCheckPoint = 5;
-                    break;
-                case "5":
+                case "12":
                     nextCheckPoint = 1;
+                    break;
+                default:
+                    nextCheckPoint = Int32.Parse( checkPointNumber) + 1;
                     break;
             }
         }
@@ -289,5 +298,20 @@ public class CarBehavior : MonoBehaviour
     private bool IsCheckPoint(Collider otherObject)
     {
         return otherObject.tag.Contains("CheckPoint");
+    }
+
+    public int GetCurrentLap()
+    {
+        return lapCounter;
+    }
+
+    public int GetNextCheckPoint()
+    {
+        return nextCheckPoint;
+    }
+
+    public float GetNextCheckPointDistance()
+    {
+        return nextCheckPointDistance;
     }
 }
