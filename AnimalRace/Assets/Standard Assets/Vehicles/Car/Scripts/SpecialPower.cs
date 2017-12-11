@@ -15,5 +15,7 @@ internal abstract class SpecialPower
         }*/
     }
 
+    public abstract override string ToString();
+
     internal abstract void Activate(CarBehavior car);
 }

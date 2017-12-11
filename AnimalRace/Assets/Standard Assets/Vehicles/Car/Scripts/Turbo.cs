@@ -32,4 +32,9 @@ internal class Turbo : SpecialPower, AbnormalStatus
     {
         remainingDuration -= deltaTime;
     }
+
+    public override string ToString()
+    {
+        return "TurboPrefab";
+    }
 }

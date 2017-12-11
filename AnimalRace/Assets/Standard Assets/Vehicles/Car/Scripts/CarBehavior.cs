@@ -15,6 +15,7 @@ public class CarBehavior : MonoBehaviour
     private bool[] activeCheckpoints;
     private List<AbnormalStatus> abnormalStatuses = new List<AbnormalStatus>();
     private SpecialPower myPowerUp;
+    [SerializeField]
     private Transform missileLauncher;
     private bool controlsEnabled;
     private int currentPosition;
@@ -48,10 +49,16 @@ public class CarBehavior : MonoBehaviour
         currentPosition = 1;
     }
 
-    internal void ChangeMaxSpeed(float TURBO_MULTIPLIER)
+    internal void ChangeMaxSpeed(float multiplier)
     {
         CarController stolenScript = gameObject.GetComponent<CarController>();
-        stolenScript.Torque = stolenScript.Torque * TURBO_MULTIPLIER;
+        float newMaxSpeed = stolenScript.MaxSpeed * multiplier;
+        if (newMaxSpeed <= 150)
+        {
+            stolenScript.MaxSpeed = newMaxSpeed;
+        }
+        else
+            stolenScript.Torque = stolenScript.Torque * multiplier;
     }
 
     public void SetCurrentPosition(int newPos)
@@ -215,9 +222,15 @@ public class CarBehavior : MonoBehaviour
     {
         return missileLauncher.transform.rotation;
     }
+
     internal Transform GetPowerUp(int powerUp)
     {
         return PowerUps.powerUps[powerUp];
+    }
+
+    internal string GetPowerUpName(int powerUpPosition)
+    {
+        return myPowerUp.ToString();
     }
 
     #endregion
