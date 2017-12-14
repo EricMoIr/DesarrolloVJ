@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 54ee5efaf6d5ed441a18522b5284bbdf, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.24939346, g: 0.31173813, b: 0.36743355, a: 1}
+  m_IndirectSpecularColor: {r: 0.24939367, g: 0.31173858, b: 0.367434, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2021,7 +2021,7 @@ Prefab:
     - target: {fileID: 114322358385231522, guid: ff1bc2a1345c41048947b4def1c9088d,
         type: 2}
       propertyPath: lapNumbers
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114322358385231522, guid: ff1bc2a1345c41048947b4def1c9088d,
         type: 2}
@@ -2139,7 +2139,7 @@ Prefab:
     - target: {fileID: 114068292902719136, guid: d4d65b3ea1c207a4e8d57fadee2a0f1d,
         type: 2}
       propertyPath: lapNumbers
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114068292902719136, guid: d4d65b3ea1c207a4e8d57fadee2a0f1d,
         type: 2}
@@ -3088,6 +3088,7 @@ MonoBehaviour:
   cars:
   - {fileID: 1452874095}
   - {fileID: 1766755250}
+  trackName: Track1
 --- !u!4 &1665950467
 Transform:
   m_ObjectHideFlags: 0

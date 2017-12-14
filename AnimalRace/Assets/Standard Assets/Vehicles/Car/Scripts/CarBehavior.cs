@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 using UnityStandardAssets.Vehicles.Car;
-
 public class CarBehavior : MonoBehaviour
 {
     [SerializeField]
@@ -88,7 +89,7 @@ public class CarBehavior : MonoBehaviour
             int minutes = (int)(lapTime / 60) % 60;
 
             string timeText = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds,milliseconds);
-            timerText.text = timeText;
+            timerText.text = timeText ;
         }
         nextCheckPointDistance = CalculateDistanceToNextCheckPoint();
         GameObject raceManager = GameObject.FindGameObjectsWithTag("RaceManager")[0];
@@ -305,7 +306,78 @@ public class CarBehavior : MonoBehaviour
             }
             checkPoint.GetComponent<CheckPointBehavior>().SendMessage("AddNextPos", 1);
             controlsEnabled = false;
+            UpdateTrackTimes();
         }
+    }
+
+    private void UpdateTrackTimes()
+    {
+        GameObject raceManager = GameObject.FindGameObjectsWithTag("RaceManager")[0];
+
+        string trackName = raceManager.GetComponent<RaceManager>().getTrackName();
+        XmlDocument xml = new XmlDocument();
+        string currentPath = Directory.GetCurrentDirectory();
+        xml.Load(currentPath + "/AnimalRace_Data/times.xml"); 
+
+        XmlNode xnLastTime = xml.SelectNodes("/tracks/track[@name='" + trackName + "']/time[@index='4']/count").Item(0);
+        float lastTime=  float.Parse( xnLastTime.InnerText);
+        if(lapTime < lastTime)
+        {
+            var nextPos = 0;
+            XmlNode[] auxNodes = new XmlNode[5];
+            XmlNodeList xnTimeNodes = xml.SelectNodes("/tracks/track[@name='" + trackName + "']/time");
+            foreach (XmlNode xn in xnTimeNodes)
+            {
+                if (lapTime < float.Parse(xn.FirstChild.InnerText))
+                {
+                    XmlNode newTimeNode = xml.CreateElement("time");
+                    XmlNode newCountNode = xml.CreateElement("count");
+                    XmlNode newNameNode = xml.CreateElement("name");
+                    XmlAttribute indexAttribute = xml.CreateAttribute("index");
+                    indexAttribute.Value = xn.Attributes["index"].Value;
+                    newCountNode.InnerText = lapTime.ToString();
+                    newTimeNode.Attributes.Append(indexAttribute);
+                    newNameNode.InnerText = "John Doe-" + xn.Attributes["index"].Value;
+                    newTimeNode.AppendChild(newCountNode);
+                    newTimeNode.AppendChild(newNameNode);
+                    auxNodes[int.Parse(xn.Attributes["index"].Value)] = newTimeNode;
+                    nextPos = int.Parse(xn.Attributes["index"].Value);
+                    break;
+                }
+                else
+                {
+                    auxNodes[int.Parse(xn.Attributes["index"].Value)] = xn;
+                }
+            }
+
+            foreach (XmlNode xn in xnTimeNodes)
+            {
+                if (nextPos <= int.Parse(xn.Attributes["index"].Value) && int.Parse(xn.Attributes["index"].Value) < 4)
+                {
+                    XmlNode newTimeNode = xml.CreateElement("time");
+                    XmlNode newCountNode = xml.CreateElement("count");
+                    XmlNode newNameNode = xml.CreateElement("name");
+                    XmlAttribute indexAttribute = xml.CreateAttribute("index");
+                    indexAttribute.Value = (int.Parse(xn.Attributes["index"].Value) + 1).ToString();
+                    newCountNode.InnerText = xn.FirstChild.InnerText;
+                    newTimeNode.Attributes.Append(indexAttribute);
+                    newNameNode.InnerText = xn.LastChild.InnerText;
+                    newTimeNode.AppendChild(newCountNode);
+                    newTimeNode.AppendChild(newNameNode);
+                    auxNodes[int.Parse(xn.Attributes["index"].Value) + 1] = newTimeNode;
+                }
+            }
+
+            foreach (XmlNode xn in xnTimeNodes)
+            {
+                XmlNode auxNode = auxNodes[int.Parse(xn.Attributes["index"].Value)];
+                xn.FirstChild.InnerText = auxNode.FirstChild.InnerText;
+                xn.LastChild.InnerText = auxNode.LastChild.InnerText;
+            }
+
+            xml.Save(currentPath + "/AnimalRace_Data/times.xml");
+        }
+       
     }
 
     private bool IsCheckPoint(Collider otherObject)

@@ -6,6 +6,8 @@ public class RaceManager : MonoBehaviour {
 
     [SerializeField]
     private GameObject[] cars;
+    [SerializeField]
+    private string trackName;
     // Use this for initialization
     void Start () {
 		
@@ -24,6 +26,11 @@ public class RaceManager : MonoBehaviour {
     public int GetCarNumbers()
     {
         return cars.Length;
+    }
+
+    public string getTrackName()
+    {
+        return trackName;
     }
 
     public  void MergeSort(int low, int high)
