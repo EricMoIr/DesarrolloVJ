@@ -10,6 +10,8 @@ public class CarBehavior : MonoBehaviour
 {
     [SerializeField]
     private PowerUpsHolderObject powerUps;
+    [SerializeField]
+    private string playerName;
     private int lapCounter;
     private int nextCheckPoint;
     private float nextCheckPointDistance;
@@ -289,7 +291,7 @@ public class CarBehavior : MonoBehaviour
             int position = checkPoint.GetComponent<CheckPointBehavior>().nextPos;
             if(position == 1)
             {
-                middleText.text = "WINNER!";
+                middleText.text = position + "st";
             }
             if(position == 2)
             {
@@ -337,7 +339,7 @@ public class CarBehavior : MonoBehaviour
                     indexAttribute.Value = xn.Attributes["index"].Value;
                     newCountNode.InnerText = lapTime.ToString();
                     newTimeNode.Attributes.Append(indexAttribute);
-                    newNameNode.InnerText = "John Doe-" + xn.Attributes["index"].Value;
+                    newNameNode.InnerText = playerName;
                     newTimeNode.AppendChild(newCountNode);
                     newTimeNode.AppendChild(newNameNode);
                     auxNodes[int.Parse(xn.Attributes["index"].Value)] = newTimeNode;

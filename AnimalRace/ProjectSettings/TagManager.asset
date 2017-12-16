@@ -19,6 +19,7 @@ TagManager:
   - CheckPoint_11
   - CheckPoint_12
   - RaceManager
+  - InputNameText
   layers:
   - Default
   - TransparentFX

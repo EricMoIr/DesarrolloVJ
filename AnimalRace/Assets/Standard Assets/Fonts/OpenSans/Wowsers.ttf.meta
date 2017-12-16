@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: d6c280482f562f9409af54a13fa2a0b1
+timeCreated: 1513378973
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Wowsers
+  fontNames:
+  - Wowsers
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bdf4aa1c3ad1f2c4b847adaaa8a6ebac, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
