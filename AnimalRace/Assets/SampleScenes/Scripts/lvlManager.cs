@@ -37,8 +37,6 @@ public class lvlManager : MonoBehaviour
     {
         button.enabled = false;
         button.GetComponentInChildren<CanvasRenderer>().SetAlpha(0);
-        button.GetComponentInChildren<Text>().color = Color.clear;
-        
     }
 
     public void SetTrack(string trackName)
@@ -55,15 +53,15 @@ public class lvlManager : MonoBehaviour
     {
         button.enabled = true;
         button.GetComponentInChildren<CanvasRenderer>().SetAlpha(1);
-        button.GetComponentInChildren<Text>().color = Color.black;
     }
 
-    public void loadLvl(string nameScene) {
-        SceneManager.LoadScene(nameScene);
+    public void loadLvl(string trackName) {
+        SceneManager.LoadScene(trackName);
     }
 
     public void LoadSelectedLvl()
     {
         SceneManager.LoadScene(RaceDataHolder.SelectedTrack);
     }
+
 }

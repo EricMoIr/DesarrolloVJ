@@ -1,0 +1,333 @@
+fileFormatVersion: 2
+guid: 3a8d91e62ef274642b95d32d2c2c3a18
+timeCreated: 1513464314
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: anclaaaa
+    100002: bandera
+    100004: baranda023
+    100006: baranda064
+    100008: baranda066
+    100010: baranda067
+    100012: baranda068
+    100014: baranda069
+    100016: baranda070
+    100018: baranda071
+    100020: baranda072
+    100022: baranda073
+    100024: Box001
+    100026: Box002
+    100028: Box003
+    100030: Box004
+    100032: Box005
+    100034: Box006
+    100036: Box007
+    100038: Box008
+    100040: columna
+    100042: columna001
+    100044: columna002
+    100046: columna003
+    100048: columna004
+    100050: columna005
+    100052: columna006
+    100054: columna007
+    100056: Cone001
+    100058: Cone002
+    100060: Cone003
+    100062: Cone004
+    100064: Cylinder001
+    100066: inflables002
+    100068: inflables002_MeshPart0
+    100070: inflables002_MeshPart1
+    100072: palmera011
+    100074: paragua001
+    100076: paragua002
+    100078: paragua003
+    100080: paragua004
+    100082: paragua005
+    100084: paragua006
+    100086: paragua007
+    100088: paragua008
+    100090: paragua009
+    100092: 'piso '
+    100094: //RootNode
+    100096: tobogan 003
+    100098: tobogan rojo
+    100100: tobogan verde
+    100102: Torus001
+    400000: anclaaaa
+    400002: bandera
+    400004: baranda023
+    400006: baranda064
+    400008: baranda066
+    400010: baranda067
+    400012: baranda068
+    400014: baranda069
+    400016: baranda070
+    400018: baranda071
+    400020: baranda072
+    400022: baranda073
+    400024: Box001
+    400026: Box002
+    400028: Box003
+    400030: Box004
+    400032: Box005
+    400034: Box006
+    400036: Box007
+    400038: Box008
+    400040: columna
+    400042: columna001
+    400044: columna002
+    400046: columna003
+    400048: columna004
+    400050: columna005
+    400052: columna006
+    400054: columna007
+    400056: Cone001
+    400058: Cone002
+    400060: Cone003
+    400062: Cone004
+    400064: Cylinder001
+    400066: inflables002
+    400068: inflables002_MeshPart0
+    400070: inflables002_MeshPart1
+    400072: palmera011
+    400074: paragua001
+    400076: paragua002
+    400078: paragua003
+    400080: paragua004
+    400082: paragua005
+    400084: paragua006
+    400086: paragua007
+    400088: paragua008
+    400090: paragua009
+    400092: 'piso '
+    400094: //RootNode
+    400096: tobogan 003
+    400098: tobogan rojo
+    400100: tobogan verde
+    400102: Torus001
+    2300000: anclaaaa
+    2300002: bandera
+    2300004: baranda023
+    2300006: baranda064
+    2300008: baranda066
+    2300010: baranda067
+    2300012: baranda068
+    2300014: baranda069
+    2300016: baranda070
+    2300018: baranda071
+    2300020: baranda072
+    2300022: baranda073
+    2300024: Box001
+    2300026: Box002
+    2300028: Box003
+    2300030: Box004
+    2300032: Box005
+    2300034: Box006
+    2300036: Box007
+    2300038: Box008
+    2300040: columna
+    2300042: columna001
+    2300044: columna002
+    2300046: columna003
+    2300048: columna004
+    2300050: columna005
+    2300052: columna006
+    2300054: columna007
+    2300056: Cone001
+    2300058: Cone002
+    2300060: Cone003
+    2300062: Cone004
+    2300064: Cylinder001
+    2300066: inflables002_MeshPart0
+    2300068: inflables002_MeshPart1
+    2300070: palmera011
+    2300072: paragua001
+    2300074: paragua002
+    2300076: paragua003
+    2300078: paragua004
+    2300080: paragua005
+    2300082: paragua006
+    2300084: paragua007
+    2300086: paragua008
+    2300088: paragua009
+    2300090: 'piso '
+    2300092: tobogan 003
+    2300094: tobogan rojo
+    2300096: tobogan verde
+    2300098: Torus001
+    3300000: anclaaaa
+    3300002: bandera
+    3300004: baranda023
+    3300006: baranda064
+    3300008: baranda066
+    3300010: baranda067
+    3300012: baranda068
+    3300014: baranda069
+    3300016: baranda070
+    3300018: baranda071
+    3300020: baranda072
+    3300022: baranda073
+    3300024: Box001
+    3300026: Box002
+    3300028: Box003
+    3300030: Box004
+    3300032: Box005
+    3300034: Box006
+    3300036: Box007
+    3300038: Box008
+    3300040: columna
+    3300042: columna001
+    3300044: columna002
+    3300046: columna003
+    3300048: columna004
+    3300050: columna005
+    3300052: columna006
+    3300054: columna007
+    3300056: Cone001
+    3300058: Cone002
+    3300060: Cone003
+    3300062: Cone004
+    3300064: Cylinder001
+    3300066: inflables002_MeshPart0
+    3300068: inflables002_MeshPart1
+    3300070: palmera011
+    3300072: paragua001
+    3300074: paragua002
+    3300076: paragua003
+    3300078: paragua004
+    3300080: paragua005
+    3300082: paragua006
+    3300084: paragua007
+    3300086: paragua008
+    3300088: paragua009
+    3300090: 'piso '
+    3300092: tobogan 003
+    3300094: tobogan rojo
+    3300096: tobogan verde
+    3300098: Torus001
+    4300000: 'piso '
+    4300002: tobogan rojo
+    4300004: tobogan verde
+    4300006: bandera
+    4300008: Cylinder001
+    4300010: Cone001
+    4300012: columna
+    4300014: columna001
+    4300016: columna002
+    4300018: columna003
+    4300020: columna004
+    4300022: columna005
+    4300024: columna006
+    4300026: columna007
+    4300028: baranda023
+    4300030: inflables002_MeshPart0
+    4300032: inflables002_MeshPart1
+    4300034: Cone002
+    4300036: Cone003
+    4300038: Torus001
+    4300040: Box001
+    4300042: paragua001
+    4300044: paragua002
+    4300046: baranda064
+    4300048: palmera011
+    4300050: Box002
+    4300052: Box003
+    4300054: Box004
+    4300056: Box005
+    4300058: Box006
+    4300060: baranda066
+    4300062: tobogan 003
+    4300064: Box007
+    4300066: baranda067
+    4300068: paragua003
+    4300070: baranda068
+    4300072: paragua004
+    4300074: paragua005
+    4300076: baranda069
+    4300078: baranda070
+    4300080: paragua006
+    4300082: baranda071
+    4300084: paragua007
+    4300086: paragua008
+    4300088: baranda072
+    4300090: paragua009
+    4300092: baranda073
+    4300094: Cone004
+    4300096: Box008
+    4300098: anclaaaa
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

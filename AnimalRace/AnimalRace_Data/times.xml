@@ -1,76 +1,73 @@
 <tracks>
-    <track name="Track1">
-        <time index="0">
-            <count>
+  <track name="Track1">
+    <time index="0">
+      <count>61.74948</count>
+      <name>Shark</name>
+    </time>
+    <time index="1">
+      <count>
                 99999
             </count>
-            <name>
-            </name>
-        </time>
-        <time index="1">
-            <count>
+      <name>
+      </name>
+    </time>
+    <time index="2">
+      <count>
                 99999
             </count>
-            <name>
-            </name>
-        </time>
-        <time index="2">
-            <count>
+      <name>
+      </name>
+    </time>
+    <time index="3">
+      <count>
                 99999
             </count>
-            <name>
-            </name>
-        </time>
-        <time index="3">
-            <count>
+      <name>
+      </name>
+    </time>
+    <time index="4">
+      <count>
                 99999
             </count>
-            <name>
-            </name>
-        </time>
-        <time index="4">
-            <count>
+      <name>
+      </name>
+    </time>
+  </track>
+  <track name="Track2">
+    <time index="0">
+      <count>
                 99999
             </count>
-            <name>
-            </name>
-        </time>
-    </track>
-    <track name="Track2">
-        <time index="0">
-            <count>
+      <name>
+      </name>
+    </time>
+    <time index="1">
+      <count>
                 99999
             </count>
-            <name>
-            </name>
-        </time>
-        <time index="1">
-            <count>
+      <name>
+      </name>
+    </time>
+    <time index="2">
+      <count>
                 99999
             </count>
-            <name>
-            </name>
-        </time>
-        <time index="2">
-            <count>
+      <name>
+      </name>
+    </time>
+    <time index="3">
+      <count>
                 99999
             </count>
-            <name>
-            </name>
-        </time>
-        <time index="3">
-            <count>
+      <name>
+      </name>
+    </time>
+    <time index="4">
+      <count>
                 99999
             </count>
-            <name>
-            </name>
-        </time>
-        <time index="4">
-            <count>
-                99999
-            </count>
-            <name>
-            </name>
-        </time>
-    </track>
+      <name>
+      </name>
+    </time>
+  </track>
 </tracks>

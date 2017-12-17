@@ -27,7 +27,7 @@ public class PlayerNameManager : MonoBehaviour {
     {
         if(letter == "OK")
         {
-            SceneManager.LoadScene("PistaUno");
+            SceneManager.LoadScene("Pista1");
 
         }
 
