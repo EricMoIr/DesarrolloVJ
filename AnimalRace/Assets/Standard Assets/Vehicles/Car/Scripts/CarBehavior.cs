@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using UnityStandardAssets.Vehicles.Car;
+
 public class CarBehavior : MonoBehaviour
 {
     [SerializeField]
@@ -26,25 +27,41 @@ public class CarBehavior : MonoBehaviour
     private string FIRE_AXIS;
     [SerializeField]
     int lapNumbers;
-    [SerializeField]
+    //[SerializeField]
     Text middleText;
-    [SerializeField]
+    //[SerializeField]
     Text timerText;
-    [SerializeField]
+    //[SerializeField]
     Text lapText;
-    [SerializeField]
+    //[SerializeField]
     Text positionText;
+    [SerializeField]
+    int nroplayer;
     float lapTime;
     public PowerUpsHolderObject PowerUps { get { return powerUps; } }
 
     // Use this for initialization
     void Start()
     {
+        if (nroplayer == 1)
+        {            
+                middleText = GameObject.FindGameObjectWithTag("OneText").GetComponent<Text>();
+                timerText = GameObject.FindGameObjectWithTag("OneTimerText").GetComponent<Text>();
+                lapText = GameObject.FindGameObjectWithTag("OneLapText").GetComponent<Text>();
+                positionText = GameObject.FindGameObjectWithTag("OnePositionText").GetComponent<Text>();
+        }
+        else if (nroplayer == 2)
+        {
+            middleText = GameObject.FindGameObjectWithTag("TwoText").GetComponent<Text>();
+            timerText = GameObject.FindGameObjectWithTag("TwoTimerText").GetComponent<Text>();
+            lapText = GameObject.FindGameObjectWithTag("TwoLapText").GetComponent<Text>();
+            positionText = GameObject.FindGameObjectWithTag("TwoPositionText").GetComponent<Text>();
+        }
         lapCounter = 0;
         activeCheckpoints = new bool[] { false, false, false };
         middleText.text = "3";
         timerText.text = "";
-        lapText.text = "Lap: 1/"+lapNumbers;
+        lapText.text = "Lap: 1/" + lapNumbers;
         lapTime = 0f;
         controlsEnabled = false;
         nextCheckPoint = 1;
@@ -83,6 +100,7 @@ public class CarBehavior : MonoBehaviour
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
+
         if (lapCounter < lapNumbers && controlsEnabled)
         {
             lapTime += Time.deltaTime;
@@ -90,13 +108,14 @@ public class CarBehavior : MonoBehaviour
             int seconds = (int)(lapTime % 60);
             int minutes = (int)(lapTime / 60) % 60;
 
-            string timeText = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds,milliseconds);
-            timerText.text = timeText ;
+            string timeText = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+            timerText.text = timeText;
         }
+
         nextCheckPointDistance = CalculateDistanceToNextCheckPoint();
         GameObject raceManager = GameObject.FindGameObjectsWithTag("RaceManager")[0];
         int numberOfPlayers = raceManager.GetComponent<RaceManager>().GetCarNumbers();
-        positionText.text ="POS: " + currentPosition.ToString() + "/"+ numberOfPlayers;
+        positionText.text = "POS: " + currentPosition.ToString() + "/" + numberOfPlayers;
     }
 
     void OnTriggerEnter(Collider otherObject)
@@ -107,7 +126,7 @@ public class CarBehavior : MonoBehaviour
 
     float CalculateDistanceToNextCheckPoint()
     {
-        GameObject nextCPoint = GameObject.FindGameObjectsWithTag("CheckPoint_"+nextCheckPoint)[0];
+        GameObject nextCPoint = GameObject.FindGameObjectsWithTag("CheckPoint_" + nextCheckPoint)[0];
         return Vector3.Distance(transform.position, nextCPoint.transform.position);
     }
 
@@ -144,7 +163,7 @@ public class CarBehavior : MonoBehaviour
                     nextCheckPoint = 1;
                     break;
                 default:
-                    nextCheckPoint = Int32.Parse( checkPointNumber) + 1;
+                    nextCheckPoint = Int32.Parse(checkPointNumber) + 1;
                     break;
             }
         }
@@ -243,10 +262,10 @@ public class CarBehavior : MonoBehaviour
         lapCounter++;
         if (lapCounter < lapNumbers)
         {
-            middleText.text = "Lap: " + (lapCounter + 1) + "/"+lapNumbers;
+            middleText.text = "Lap: " + (lapCounter + 1) + "/" + lapNumbers;
             lapText.text = "";
             StartCoroutine(ResetTexts());
-        } 
+        }
         ResetCheckPointList();
         CheckIfRaceIsOver(checkPoint);
 
@@ -256,7 +275,7 @@ public class CarBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         middleText.text = "";
-        lapText.text = "Lap: " + (lapCounter + 1) + "/"+lapNumbers;
+        lapText.text = "Lap: " + (lapCounter + 1) + "/" + lapNumbers;
 
     }
 
@@ -277,7 +296,7 @@ public class CarBehavior : MonoBehaviour
 
     private void ResetCheckPointList()
     {
-        for(int i = 0; i < activeCheckpoints.Length; i++)
+        for (int i = 0; i < activeCheckpoints.Length; i++)
         {
             activeCheckpoints[i] = false;
         }
@@ -286,14 +305,14 @@ public class CarBehavior : MonoBehaviour
     private void CheckIfRaceIsOver(Collider checkPoint)
     {
 
-        if(lapCounter == lapNumbers)
+        if (lapCounter == lapNumbers)
         {
             int position = checkPoint.GetComponent<CheckPointBehavior>().nextPos;
-            if(position == 1)
+            if (position == 1)
             {
                 middleText.text = position + "st";
             }
-            if(position == 2)
+            if (position == 2)
             {
                 middleText.text = position + "nd";
             }
@@ -319,11 +338,11 @@ public class CarBehavior : MonoBehaviour
         string trackName = raceManager.GetComponent<RaceManager>().getTrackName();
         XmlDocument xml = new XmlDocument();
         string currentPath = Directory.GetCurrentDirectory();
-        xml.Load(currentPath + "/AnimalRace_Data/times.xml"); 
+        xml.Load(currentPath + "/AnimalRace_Data/times.xml");
 
         XmlNode xnLastTime = xml.SelectNodes("/tracks/track[@name='" + trackName + "']/time[@index='4']/count").Item(0);
-        float lastTime=  float.Parse( xnLastTime.InnerText);
-        if(lapTime < lastTime)
+        float lastTime = float.Parse(xnLastTime.InnerText);
+        if (lapTime < lastTime)
         {
             var nextPos = 0;
             XmlNode[] auxNodes = new XmlNode[5];
@@ -379,7 +398,7 @@ public class CarBehavior : MonoBehaviour
 
             xml.Save(currentPath + "/AnimalRace_Data/times.xml");
         }
-       
+
     }
 
     private bool IsCheckPoint(Collider otherObject)
