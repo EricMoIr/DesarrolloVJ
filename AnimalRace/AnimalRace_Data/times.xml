@@ -1,15 +1,12 @@
 <tracks>
   <track name="Track1">
     <time index="0">
-      <count>61.74948</count>
-      <name>Shark</name>
+      <count>38.57157</count>
+      <name>Koala</name>
     </time>
     <time index="1">
-      <count>
-                99999
-            </count>
-      <name>
-      </name>
+      <count>61.74948</count>
+      <name>Shark</name>
     </time>
     <time index="2">
       <count>
