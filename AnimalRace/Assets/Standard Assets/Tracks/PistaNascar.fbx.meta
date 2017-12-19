@@ -1,104 +1,67 @@
 fileFormatVersion: 2
-guid: 5eb93a2694909294c8ed54a0455b9fb0
-timeCreated: 1513604624
+guid: 46bcfa2aa65061c47bafb21b5b37683e
+timeCreated: 1510787519
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: Box001
-    100002: Box004
-    100004: Box006
-    100006: Box011
-    100008: Murito2
-    100010: Object001
-    100012: Object005
-    100014: Object006
-    100016: //RootNode
-    100018: Pyramid001
-    100020: Pyramid002
-    100022: Pyramid003
-    100024: Pyramid004
-    100026: Pyramid005
-    100028: Pyramid006
-    100030: Pyramid007
-    100032: Ruta
-    100034: Tunel
-    100036: Vallado
+    100002: Murito
+    100004: Murito2
+    100006: Muro_base1
+    100008: //RootNode
+    100010: Pyramid001
+    100012: Pyramid002
+    100014: Pyramid003
+    100016: Pyramid004
+    100018: Pyramid005
+    100020: Ruta
+    100022: Tunel
     400000: Box001
-    400002: Box004
-    400004: Box006
-    400006: Box011
-    400008: Murito2
-    400010: Object001
-    400012: Object005
-    400014: Object006
-    400016: //RootNode
-    400018: Pyramid001
-    400020: Pyramid002
-    400022: Pyramid003
-    400024: Pyramid004
-    400026: Pyramid005
-    400028: Pyramid006
-    400030: Pyramid007
-    400032: Ruta
-    400034: Tunel
-    400036: Vallado
+    400002: Murito
+    400004: Murito2
+    400006: Muro_base1
+    400008: //RootNode
+    400010: Pyramid001
+    400012: Pyramid002
+    400014: Pyramid003
+    400016: Pyramid004
+    400018: Pyramid005
+    400020: Ruta
+    400022: Tunel
     2300000: Box001
-    2300002: Box004
-    2300004: Box006
-    2300006: Box011
-    2300008: Murito2
-    2300010: Object001
-    2300012: Object005
-    2300014: Object006
-    2300016: Pyramid001
-    2300018: Pyramid002
-    2300020: Pyramid003
-    2300022: Pyramid004
-    2300024: Pyramid005
-    2300026: Pyramid006
-    2300028: Pyramid007
-    2300030: Ruta
-    2300032: Tunel
-    2300034: Vallado
-    2300036: //RootNode
+    2300002: Murito
+    2300004: Murito2
+    2300006: Muro_base1
+    2300008: Pyramid001
+    2300010: Pyramid002
+    2300012: Pyramid003
+    2300014: Pyramid004
+    2300016: Pyramid005
+    2300018: Ruta
+    2300020: Tunel
     3300000: Box001
-    3300002: Box004
-    3300004: Box006
-    3300006: Box011
-    3300008: Murito2
-    3300010: Object001
-    3300012: Object005
-    3300014: Object006
-    3300016: Pyramid001
-    3300018: Pyramid002
-    3300020: Pyramid003
-    3300022: Pyramid004
-    3300024: Pyramid005
-    3300026: Pyramid006
-    3300028: Pyramid007
-    3300030: Ruta
-    3300032: Tunel
-    3300034: Vallado
-    3300036: //RootNode
+    3300002: Murito
+    3300004: Murito2
+    3300006: Muro_base1
+    3300008: Pyramid001
+    3300010: Pyramid002
+    3300012: Pyramid003
+    3300014: Pyramid004
+    3300016: Pyramid005
+    3300018: Ruta
+    3300020: Tunel
     4300000: Tunel
-    4300002: Vallado
-    4300004: Murito2
-    4300006: Ruta
-    4300008: Pyramid001
-    4300010: Pyramid002
-    4300012: Pyramid003
-    4300014: Pyramid004
-    4300016: Pyramid005
-    4300018: Box001
-    4300020: Box004
-    4300022: Box006
-    4300024: Box011
-    4300026: Pyramid006
-    4300028: Pyramid007
-    4300030: Object001
-    4300032: Object005
-    4300034: Object006
+    4300002: Murito
+    4300004: Muro_base1
+    4300006: Murito2
+    4300008: Ruta
+    4300010: Pyramid001
+    4300012: Pyramid002
+    4300014: Pyramid003
+    4300016: Pyramid004
+    4300018: Pyramid005
+    4300020: Box001
     9500000: //RootNode
   materials:
     importMaterials: 1
