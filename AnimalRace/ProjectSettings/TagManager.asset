@@ -28,10 +28,14 @@ TagManager:
   - TwoLapText
   - TwoTimerText
   - TwoPositionText
-  - OneOneText
-  - OneOneLapText
-  - OneOneTimerText
-  - OneOnePositionText
+  - ThreeText
+  - ThreeLapText
+  - ThreeTimerText
+  - ThreePositionText
+  - FourText
+  - FourLapText
+  - FourTimerText
+  - FourPositionText
   layers:
   - Default
   - TransparentFX

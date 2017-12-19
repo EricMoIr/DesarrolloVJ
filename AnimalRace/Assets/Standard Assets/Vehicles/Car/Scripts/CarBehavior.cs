@@ -57,6 +57,20 @@ public class CarBehavior : MonoBehaviour
             lapText = GameObject.FindGameObjectWithTag("TwoLapText").GetComponent<Text>();
             positionText = GameObject.FindGameObjectWithTag("TwoPositionText").GetComponent<Text>();
         }
+        else if (nroplayer == 3)
+        {
+            middleText = GameObject.FindGameObjectWithTag("ThreeText").GetComponent<Text>();
+            timerText = GameObject.FindGameObjectWithTag("ThreeTimerText").GetComponent<Text>();
+            lapText = GameObject.FindGameObjectWithTag("ThreeLapText").GetComponent<Text>();
+            positionText = GameObject.FindGameObjectWithTag("ThreePositionText").GetComponent<Text>();
+        }
+        else if (nroplayer == 4)
+        {
+            middleText = GameObject.FindGameObjectWithTag("FourText").GetComponent<Text>();
+            timerText = GameObject.FindGameObjectWithTag("FourTimerText").GetComponent<Text>();
+            lapText = GameObject.FindGameObjectWithTag("FourLapText").GetComponent<Text>();
+            positionText = GameObject.FindGameObjectWithTag("FourPositionText").GetComponent<Text>();
+        }
         lapCounter = 0;
         activeCheckpoints = new bool[] { false, false, false };
         middleText.text = "3";

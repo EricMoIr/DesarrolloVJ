@@ -11,7 +11,10 @@ public class DestroyObjMayores : MonoBehaviour
     void Awake()
     {
         if (RaceDataHolder.isNew.NumberOfPlayers < numberPlayer)
+        {
+            gameObject.SetActive(false);
             Destroy(gameObject);
+        }
     }
 }
 
