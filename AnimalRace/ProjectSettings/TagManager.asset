@@ -36,6 +36,7 @@ TagManager:
   - FourLapText
   - FourTimerText
   - FourPositionText
+  - DataToNextScene
   layers:
   - Default
   - TransparentFX

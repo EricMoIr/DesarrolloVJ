@@ -44,11 +44,13 @@ public class CarBehavior : MonoBehaviour
     void Start()
     {
         if (nroplayer == 1)
-        {            
+        {
+                //RaceDataHolder obk = GameObject.FindGameObjectWithTag("DataToNextScene").GetComponent<RaceDataHolder>();
                 middleText = GameObject.FindGameObjectWithTag("OneText").GetComponent<Text>();
                 timerText = GameObject.FindGameObjectWithTag("OneTimerText").GetComponent<Text>();
                 lapText = GameObject.FindGameObjectWithTag("OneLapText").GetComponent<Text>();
                 positionText = GameObject.FindGameObjectWithTag("OnePositionText").GetComponent<Text>();
+                
         }
         else if (nroplayer == 2)
         {

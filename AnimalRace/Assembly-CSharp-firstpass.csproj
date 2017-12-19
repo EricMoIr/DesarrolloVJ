@@ -124,7 +124,6 @@
      <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\MissileCollisionStatus.cs" />
      <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\Mudguard.cs" />
      <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\ObjectPooler.cs" />
-     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\PlayerNameManager.cs" />
      <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\PowerUpsHolderObject.cs" />
      <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\RaceManager.cs" />
      <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
@@ -223,9 +222,6 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
- </Reference>
- <Reference Include="Mono.Cecil">
- <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

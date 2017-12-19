@@ -100,6 +100,7 @@
      <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\PlayerNameManager.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\RaceDataHolder.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\RotateMenu.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
@@ -194,9 +195,6 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
- </Reference>
- <Reference Include="Mono.Cecil">
- <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
