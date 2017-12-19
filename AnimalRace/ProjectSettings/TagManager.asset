@@ -20,6 +20,18 @@ TagManager:
   - CheckPoint_12
   - RaceManager
   - InputNameText
+  - OneText
+  - OneLapText
+  - OneTimerText
+  - OnePositionText
+  - TwoText
+  - TwoLapText
+  - TwoTimerText
+  - TwoPositionText
+  - OneOneText
+  - OneOneLapText
+  - OneOneTimerText
+  - OneOnePositionText
   layers:
   - Default
   - TransparentFX

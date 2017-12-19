@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RaceData
 {
-    public static class RaceDataHolder
+    public class RaceDataHolder : MonoBehaviour
     {
-        private static int numberOfPlayers;
-        private static string selectedTrack;
+        public static RaceDataHolder isNew;
+        [SerializeField]
+        private int numberOfPlayers;
+        [SerializeField]
+        private string selectedTrack;
 
-        public static int NumberOfPlayers
+        public int NumberOfPlayers
         {
             get
             {
@@ -20,7 +23,7 @@ namespace RaceData
             }
         }
 
-        public static string SelectedTrack
+        public string SelectedTrack
         {
             get
             {
@@ -32,5 +35,16 @@ namespace RaceData
             }
         }
 
+        void Awake()
+        {
+            if (isNew == null)
+            {
+                isNew = this;
+                DontDestroyOnLoad(gameObject);
+
+            }
+            else if (isNew != this)
+                Destroy(gameObject);
+        }
     }
 }

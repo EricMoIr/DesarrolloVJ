@@ -41,12 +41,13 @@ public class lvlManager : MonoBehaviour
 
     public void SetTrack(string trackName)
     {
-        RaceDataHolder.SelectedTrack = trackName;
+        RaceDataHolder.isNew.SelectedTrack = trackName;
     }
 
     public void SetNumberOfPlayers(int number)
     {
-        RaceDataHolder.NumberOfPlayers = number;
+        RaceDataHolder.isNew.NumberOfPlayers = number;
+        //RaceDataHolder.NumberOfPlayers = number;
     }
 
     public void ShowButton(Button button)
@@ -59,9 +60,9 @@ public class lvlManager : MonoBehaviour
         SceneManager.LoadScene(trackName);
     }
 
-    public void LoadSelectedLvl()
+  /*  public void LoadSelectedLvl()
     {
         SceneManager.LoadScene(RaceDataHolder.SelectedTrack);
-    }
+    } */
 
 }
