@@ -17,6 +17,14 @@ ModelImporter:
     100018: Pyramid005
     100020: Ruta
     100022: Tunel
+    100024: Box004
+    100026: Box011
+    100028: Object001
+    100030: Object005
+    100032: Object006
+    100034: Pyramid006
+    100036: Pyramid007
+    100038: Vallado
     400000: Box001
     400002: Murito
     400004: Murito2
@@ -29,6 +37,14 @@ ModelImporter:
     400018: Pyramid005
     400020: Ruta
     400022: Tunel
+    400024: Box004
+    400026: Box011
+    400028: Object001
+    400030: Object005
+    400032: Object006
+    400034: Pyramid006
+    400036: Pyramid007
+    400038: Vallado
     2300000: Box001
     2300002: Murito
     2300004: Murito2
@@ -40,6 +56,14 @@ ModelImporter:
     2300016: Pyramid005
     2300018: Ruta
     2300020: Tunel
+    2300022: Box004
+    2300024: Box011
+    2300026: Object001
+    2300028: Object005
+    2300030: Object006
+    2300032: Pyramid006
+    2300034: Pyramid007
+    2300036: Vallado
     3300000: Box001
     3300002: Murito
     3300004: Murito2
@@ -51,6 +75,14 @@ ModelImporter:
     3300016: Pyramid005
     3300018: Ruta
     3300020: Tunel
+    3300022: Box004
+    3300024: Box011
+    3300026: Object001
+    3300028: Object005
+    3300030: Object006
+    3300032: Pyramid006
+    3300034: Pyramid007
+    3300036: Vallado
     4300000: Tunel
     4300002: Murito
     4300004: Muro_base1
@@ -62,6 +94,14 @@ ModelImporter:
     4300016: Pyramid004
     4300018: Pyramid005
     4300020: Box001
+    4300022: Vallado
+    4300024: Box004
+    4300026: Box011
+    4300028: Pyramid006
+    4300030: Pyramid007
+    4300032: Object001
+    4300034: Object005
+    4300036: Object006
     9500000: //RootNode
   materials:
     importMaterials: 1
