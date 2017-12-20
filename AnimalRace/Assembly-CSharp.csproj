@@ -112,6 +112,7 @@
      <Compile Include="Assets\SampleScenes\Scripts\RaceDataHolder.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\RaceManager.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\RotateMenu.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\ShowRecords.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SpecialPower.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SpecialPowerBuilder.cs" />

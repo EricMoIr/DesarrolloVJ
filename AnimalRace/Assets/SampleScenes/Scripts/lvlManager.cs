@@ -11,10 +11,6 @@ public class lvlManager : MonoBehaviour
     [SerializeField]
     private List<Button> hiddenButtons;
     [SerializeField]
-    private Text header;
-    [SerializeField]
-    private Text body;
-    [SerializeField]
     private string timeTrackName;
     // Use this for initialization
     void Start()
@@ -23,8 +19,6 @@ public class lvlManager : MonoBehaviour
         {
             HideButton(hiddenButtons.ElementAt(i));
         }
-        header.text = "";
-        body.text = "";
     }
 
     // Update is called once per frame
@@ -56,8 +50,15 @@ public class lvlManager : MonoBehaviour
         button.GetComponentInChildren<CanvasRenderer>().SetAlpha(1);
     }
 
+    
+
     public void loadLvl(string trackName) {
         SceneManager.LoadScene(trackName);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
   /*  public void LoadSelectedLvl()

@@ -11,7 +11,10 @@ namespace RaceData
         [SerializeField]
         private string selectedTrack;
         [SerializeField]
-        private string playerName;
+        private string playerName1;
+        private string playerName2;
+        private string playerName3;
+        private string playerName4;
 
         public int NumberOfPlayers
         {
@@ -37,15 +40,51 @@ namespace RaceData
             }
         }
 
-        public string PlayerName
+        public string PlayerName1
         {
             get
             {
-                return playerName;
+                return playerName1;
             }
             set
             {
-                playerName = value;
+                playerName1 = value;
+            }
+        }
+
+        public string PlayerName2
+        {
+            get
+            {
+                return playerName2;
+            }
+            set
+            {
+                playerName2 = value;
+            }
+        }
+
+        public string PlayerName3
+        {
+            get
+            {
+                return playerName3;
+            }
+            set
+            {
+                playerName3 = value;
+            }
+        }
+
+        public string PlayerName4
+        {
+            get
+            {
+                return playerName4;
+            }
+            set
+            {
+                playerName4 = value;
             }
         }
 

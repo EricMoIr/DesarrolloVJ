@@ -50,7 +50,8 @@ public class CarBehavior : MonoBehaviour
                 timerText = GameObject.FindGameObjectWithTag("OneTimerText").GetComponent<Text>();
                 lapText = GameObject.FindGameObjectWithTag("OneLapText").GetComponent<Text>();
                 positionText = GameObject.FindGameObjectWithTag("OnePositionText").GetComponent<Text>();
-                
+                playerName = RaceData.RaceDataHolder.isNew.PlayerName1;
+
         }
         else if (nroplayer == 2)
         {
@@ -58,6 +59,7 @@ public class CarBehavior : MonoBehaviour
             timerText = GameObject.FindGameObjectWithTag("TwoTimerText").GetComponent<Text>();
             lapText = GameObject.FindGameObjectWithTag("TwoLapText").GetComponent<Text>();
             positionText = GameObject.FindGameObjectWithTag("TwoPositionText").GetComponent<Text>();
+            playerName = RaceData.RaceDataHolder.isNew.PlayerName2;
         }
         else if (nroplayer == 3)
         {
@@ -65,6 +67,7 @@ public class CarBehavior : MonoBehaviour
             timerText = GameObject.FindGameObjectWithTag("ThreeTimerText").GetComponent<Text>();
             lapText = GameObject.FindGameObjectWithTag("ThreeLapText").GetComponent<Text>();
             positionText = GameObject.FindGameObjectWithTag("ThreePositionText").GetComponent<Text>();
+            playerName = RaceData.RaceDataHolder.isNew.PlayerName3;
         }
         else if (nroplayer == 4)
         {
@@ -72,8 +75,8 @@ public class CarBehavior : MonoBehaviour
             timerText = GameObject.FindGameObjectWithTag("FourTimerText").GetComponent<Text>();
             lapText = GameObject.FindGameObjectWithTag("FourLapText").GetComponent<Text>();
             positionText = GameObject.FindGameObjectWithTag("FourPositionText").GetComponent<Text>();
+            playerName = RaceData.RaceDataHolder.isNew.PlayerName4;
         }
-        playerName = RaceData.RaceDataHolder.isNew.PlayerName;
         lapCounter = 0;
         activeCheckpoints = new bool[] { false, false, false };
         middleText.text = "3";
@@ -131,7 +134,7 @@ public class CarBehavior : MonoBehaviour
 
         nextCheckPointDistance = CalculateDistanceToNextCheckPoint();
         GameObject raceManager = GameObject.FindGameObjectsWithTag("RaceManager")[0];
-        int numberOfPlayers = raceManager.GetComponent<RaceManager>().GetCarNumbers();
+        int numberOfPlayers = RaceData.RaceDataHolder.isNew.NumberOfPlayers;
         positionText.text = "POS: " + currentPosition.ToString() + "/" + numberOfPlayers;
     }
 
@@ -357,12 +360,12 @@ public class CarBehavior : MonoBehaviour
         string currentPath = Directory.GetCurrentDirectory();
         xml.Load(currentPath + "/AnimalRace_Data/times.xml");
 
-        XmlNode xnLastTime = xml.SelectNodes("/tracks/track[@name='" + trackName + "']/time[@index='4']/count").Item(0);
+        XmlNode xnLastTime = xml.SelectNodes("/tracks/track[@name='" + trackName + "']/time[@index='5']/count").Item(0);
         float lastTime = float.Parse(xnLastTime.InnerText);
         if (lapTime < lastTime)
         {
             var nextPos = 0;
-            XmlNode[] auxNodes = new XmlNode[5];
+            XmlNode[] auxNodes = new XmlNode[6];
             XmlNodeList xnTimeNodes = xml.SelectNodes("/tracks/track[@name='" + trackName + "']/time");
             foreach (XmlNode xn in xnTimeNodes)
             {
@@ -390,7 +393,7 @@ public class CarBehavior : MonoBehaviour
 
             foreach (XmlNode xn in xnTimeNodes)
             {
-                if (nextPos <= int.Parse(xn.Attributes["index"].Value) && int.Parse(xn.Attributes["index"].Value) < 4)
+                if (nextPos <= int.Parse(xn.Attributes["index"].Value) && int.Parse(xn.Attributes["index"].Value) < 5)
                 {
                     XmlNode newTimeNode = xml.CreateElement("time");
                     XmlNode newCountNode = xml.CreateElement("count");
