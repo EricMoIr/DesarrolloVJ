@@ -73,6 +73,7 @@ public class CarBehavior : MonoBehaviour
             lapText = GameObject.FindGameObjectWithTag("FourLapText").GetComponent<Text>();
             positionText = GameObject.FindGameObjectWithTag("FourPositionText").GetComponent<Text>();
         }
+        playerName = RaceData.RaceDataHolder.isNew.PlayerName;
         lapCounter = 0;
         activeCheckpoints = new bool[] { false, false, false };
         middleText.text = "3";
