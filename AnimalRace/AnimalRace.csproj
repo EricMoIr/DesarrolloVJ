@@ -135,13 +135,29 @@
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\AbnormalStatus.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\CarBehavior.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\ConstantsHelper.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\DestroyObjDistinto.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\DestroyObjMayores.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\Missile.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\MissileBehavior.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\MissileCollisionStatus.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\ObjectPooler.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\PlayerNameManager.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\PowerUpsHolderObject.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\RaceDataHolder.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\RaceManager.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\RotateMenu.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\ShowRecords.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\SpecialPower.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\SpecialPowerBuilder.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\Turbo.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\lvlManager.cs" />
   </ItemGroup>
   <ItemGroup>

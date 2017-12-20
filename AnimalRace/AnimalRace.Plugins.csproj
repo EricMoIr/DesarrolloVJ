@@ -144,29 +144,16 @@
     <Compile Include="Assets\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\AbnormalStatus.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\BrakeLight.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\CarAIControl.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\CarAudio.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\CarBehavior.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\CarController.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\CarSelfRighting.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\CarUserControl.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\CheckPointBehavior.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\ConstantsHelper.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\Missile.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\MissileBehavior.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\MissileCollisionStatus.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\Mudguard.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\ObjectPooler.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\PlayerNameManager.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\PowerUpsHolderObject.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\RaceManager.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\SpecialPower.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\SpecialPowerBuilder.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
-    <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\Turbo.cs" />
     <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
   </ItemGroup>
   <ItemGroup>
