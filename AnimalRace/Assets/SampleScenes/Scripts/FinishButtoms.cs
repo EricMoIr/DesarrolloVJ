@@ -27,4 +27,6 @@ public class FinishButtoms : MonoBehaviour {
         enabled = false;
         GetComponentInChildren<CanvasRenderer>().SetAlpha(0);
     }
+
+
 }

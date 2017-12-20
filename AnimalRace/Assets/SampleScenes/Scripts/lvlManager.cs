@@ -41,7 +41,6 @@ public class lvlManager : MonoBehaviour
     public void SetNumberOfPlayers(int number)
     {
         RaceDataHolder.isNew.NumberOfPlayers = number;
-        //RaceDataHolder.NumberOfPlayers = number;
     }
 
     public void ShowButton(Button button)
@@ -61,9 +60,10 @@ public class lvlManager : MonoBehaviour
         Application.Quit();
     }
 
-  /*  public void LoadSelectedLvl()
+    public void ReloadLvl()
     {
-        SceneManager.LoadScene(RaceDataHolder.SelectedTrack);
-    } */
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 
 }
