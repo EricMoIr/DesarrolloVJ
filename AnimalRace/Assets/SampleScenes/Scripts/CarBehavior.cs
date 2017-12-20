@@ -21,23 +21,22 @@ public class CarBehavior : MonoBehaviour
     private SpecialPower myPowerUp;
     [SerializeField]
     private Transform missileLauncher;
-    private bool controlsEnabled;
+    static public bool controlsEnabled;
+    private bool controlsEnabledEnd=true;
     private int currentPosition;
     [SerializeField]
     private string FIRE_AXIS;
     [SerializeField]
     int lapNumbers;
-    //[SerializeField]
     Text middleText;
-    //[SerializeField]
     Text timerText;
-    //[SerializeField]
     Text lapText;
-    //[SerializeField]
     Text positionText;
     [SerializeField]
     int nroplayer;
     float lapTime;
+    static public int finished=0;
+
     public PowerUpsHolderObject PowerUps { get { return powerUps; } }
 
     // Use this for initialization
@@ -45,17 +44,15 @@ public class CarBehavior : MonoBehaviour
     {
         if (nroplayer == 1)
         {
-                //RaceDataHolder obk = GameObject.FindGameObjectWithTag("DataToNextScene").GetComponent<RaceDataHolder>();
-                middleText = GameObject.FindGameObjectWithTag("OneText").GetComponent<Text>();
-                timerText = GameObject.FindGameObjectWithTag("OneTimerText").GetComponent<Text>();
-                lapText = GameObject.FindGameObjectWithTag("OneLapText").GetComponent<Text>();
-                positionText = GameObject.FindGameObjectWithTag("OnePositionText").GetComponent<Text>();
-                playerName = RaceData.RaceDataHolder.isNew.PlayerName1;
-
+            middleText = GameObject.FindGameObjectWithTag("OneText").GetComponent<Text>();
+            timerText = GameObject.FindGameObjectWithTag("OneTimerText").GetComponent<Text>();
+            lapText = GameObject.FindGameObjectWithTag("OneLapText").GetComponent<Text>();
+            positionText = GameObject.FindGameObjectWithTag("OnePositionText").GetComponent<Text>();
+            playerName = RaceData.RaceDataHolder.isNew.PlayerName1;
+            middleText.text = "3";
         }
         else if (nroplayer == 2)
         {
-            middleText = GameObject.FindGameObjectWithTag("TwoText").GetComponent<Text>();
             timerText = GameObject.FindGameObjectWithTag("TwoTimerText").GetComponent<Text>();
             lapText = GameObject.FindGameObjectWithTag("TwoLapText").GetComponent<Text>();
             positionText = GameObject.FindGameObjectWithTag("TwoPositionText").GetComponent<Text>();
@@ -63,7 +60,6 @@ public class CarBehavior : MonoBehaviour
         }
         else if (nroplayer == 3)
         {
-            middleText = GameObject.FindGameObjectWithTag("ThreeText").GetComponent<Text>();
             timerText = GameObject.FindGameObjectWithTag("ThreeTimerText").GetComponent<Text>();
             lapText = GameObject.FindGameObjectWithTag("ThreeLapText").GetComponent<Text>();
             positionText = GameObject.FindGameObjectWithTag("ThreePositionText").GetComponent<Text>();
@@ -71,7 +67,6 @@ public class CarBehavior : MonoBehaviour
         }
         else if (nroplayer == 4)
         {
-            middleText = GameObject.FindGameObjectWithTag("FourText").GetComponent<Text>();
             timerText = GameObject.FindGameObjectWithTag("FourTimerText").GetComponent<Text>();
             lapText = GameObject.FindGameObjectWithTag("FourLapText").GetComponent<Text>();
             positionText = GameObject.FindGameObjectWithTag("FourPositionText").GetComponent<Text>();
@@ -79,7 +74,6 @@ public class CarBehavior : MonoBehaviour
         }
         lapCounter = 0;
         activeCheckpoints = new bool[] { false, false, false };
-        middleText.text = "3";
         timerText.text = "";
         lapText.text = "Lap: 1/" + lapNumbers;
         lapTime = 0f;
@@ -112,7 +106,7 @@ public class CarBehavior : MonoBehaviour
     {
         FireSpecialPower();
         ReduceAbnormalStatusTime();
-        if (controlsEnabled)
+        if (controlsEnabled && controlsEnabledEnd) 
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
@@ -121,7 +115,7 @@ public class CarBehavior : MonoBehaviour
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
 
-        if (lapCounter < lapNumbers && controlsEnabled)
+        if (lapCounter < lapNumbers && controlsEnabled && controlsEnabledEnd)
         {
             lapTime += Time.deltaTime;
             int milliseconds = (int)(lapTime * 1000) % 1000;
@@ -135,7 +129,15 @@ public class CarBehavior : MonoBehaviour
         nextCheckPointDistance = CalculateDistanceToNextCheckPoint();
         GameObject raceManager = GameObject.FindGameObjectsWithTag("RaceManager")[0];
         int numberOfPlayers = RaceData.RaceDataHolder.isNew.NumberOfPlayers;
-        positionText.text = "POS: " + currentPosition.ToString() + "/" + numberOfPlayers;
+        positionText.text = currentPosition.ToString();
+        if (currentPosition == 1)
+            positionText.text += "st";
+        else if (currentPosition == 2)
+            positionText.text += "nd";
+        else if (currentPosition == 3)
+            positionText.text += "rd";
+        else if (currentPosition == 4)
+            positionText.text += "th";
     }
 
     void OnTriggerEnter(Collider otherObject)
@@ -301,17 +303,19 @@ public class CarBehavior : MonoBehaviour
 
     IEnumerator BeginCountDown()
     {
-        yield return new WaitForSeconds(1);
-        middleText.text = "2";
-        yield return new WaitForSeconds(1);
-        middleText.text = "1";
-        yield return new WaitForSeconds(1);
-        middleText.text = "GO!";
-        controlsEnabled = true;
-        yield return new WaitForSeconds(3);
-        middleText.text = "";
+        if (nroplayer == 1)
+        {
+            yield return new WaitForSeconds(1);
+            middleText.text = "2";
+            yield return new WaitForSeconds(1);
+            middleText.text = "1";
+            yield return new WaitForSeconds(1);
+            middleText.text = "GO!";
+            controlsEnabled = true;
+            yield return new WaitForSeconds(3);
+            middleText.text = "";
 
-
+        }
     }
 
     private void ResetCheckPointList()
@@ -346,7 +350,8 @@ public class CarBehavior : MonoBehaviour
 
             }
             checkPoint.GetComponent<CheckPointBehavior>().SendMessage("AddNextPos", 1);
-            controlsEnabled = false;
+            controlsEnabledEnd = false;
+            finished++;
             UpdateTrackTimes();
         }
     }
@@ -440,4 +445,6 @@ public class CarBehavior : MonoBehaviour
     {
         return nextCheckPointDistance;
     }
+
+
 }

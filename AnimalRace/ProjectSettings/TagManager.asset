@@ -37,6 +37,7 @@ TagManager:
   - FourTimerText
   - FourPositionText
   - DataToNextScene
+  - Player1
   layers:
   - Default
   - TransparentFX
@@ -47,7 +48,7 @@ TagManager:
   - 
   - 
   - PlayerLayer
-  - 
+  - P1layer
   - 
   - 
   - 
