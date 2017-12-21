@@ -15,6 +15,7 @@ namespace RaceData
         private string playerName2;
         private string playerName3;
         private string playerName4;
+        private int nextPos;
 
         public int NumberOfPlayers
         {
@@ -25,6 +26,19 @@ namespace RaceData
             set
             {
                 numberOfPlayers = value;
+            }
+        }
+
+
+        public int NextPos
+        {
+            get
+            {
+                return nextPos;
+            }
+            set
+            {
+                nextPos = value;
             }
         }
 

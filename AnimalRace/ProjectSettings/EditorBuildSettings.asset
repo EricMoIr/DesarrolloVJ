@@ -13,6 +13,9 @@ EditorBuildSettings:
     guid: 41b8fdb98491fab48a0cd641d4c0e3b1
   - enabled: 1
     path: Assets/SampleScenes/Scenes/Pista2.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/a83fa142d3d101142b91a76e9dde50d1
     guid: a83fa142d3d101142b91a76e9dde50d1
   - enabled: 1
     path: Assets/SampleScenes/Scenes/Particles.unity
@@ -22,4 +25,4 @@ EditorBuildSettings:
     guid: 7ae3dc92b7ffc58419d088fe46939d44
   - enabled: 1
     path: Assets/SampleScenes/Scenes/TiemposPista1.unity
-    guid: 00000000000000000000000000000000
+    guid: 44b05a11acab8e643b537da2a957b8a3

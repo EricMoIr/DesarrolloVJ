@@ -19,7 +19,10 @@ public class RaceManager : MonoBehaviour {
         for(int i = 0; i < cars.Length; i++)
         {
             GameObject car = cars[i];
-            car.GetComponent<CarBehavior>().SendMessage("SetCurrentPosition", i + 1);
+            if(car != null && RaceData.RaceDataHolder.isNew.NumberOfPlayers != 1)
+            {
+                car.GetComponent<CarBehavior>().SendMessage("SetCurrentPosition", i + 1);
+            }
         }
 	}
 
@@ -102,32 +105,35 @@ public class RaceManager : MonoBehaviour {
 
     bool IsLessThan(GameObject car1, GameObject car2)
     {
-        int car1Lap =  car1.GetComponent<CarBehavior>().GetCurrentLap();
-        int car2Lap =  car2.GetComponent<CarBehavior>().GetCurrentLap();
-
-        int car1CheckPoint = car1.GetComponent<CarBehavior>().GetNextCheckPoint();
-        int car2CheckPoint = car2.GetComponent<CarBehavior>().GetNextCheckPoint();
-
-        float car1CheckPointDistance = car1.GetComponent<CarBehavior>().GetNextCheckPointDistance();
-        float car2CheckPointDistance = car2.GetComponent<CarBehavior>().GetNextCheckPointDistance();
-
-        if(car2Lap < car1Lap)
+        if(car2 != null)
         {
-            return true;
-        }
-        else
-        {
-            if(car2CheckPoint < car1CheckPoint)
+            int car1Lap = car1.GetComponent<CarBehavior>().GetCurrentLap();
+            int car2Lap = car2.GetComponent<CarBehavior>().GetCurrentLap();
+
+            int car1CheckPoint = car1.GetComponent<CarBehavior>().GetNextCheckPoint();
+            int car2CheckPoint = car2.GetComponent<CarBehavior>().GetNextCheckPoint();
+
+            float car1CheckPointDistance = car1.GetComponent<CarBehavior>().GetNextCheckPointDistance();
+            float car2CheckPointDistance = car2.GetComponent<CarBehavior>().GetNextCheckPointDistance();
+
+            if (car2Lap < car1Lap)
             {
                 return true;
             }
             else
             {
-                return car2CheckPointDistance > car1CheckPointDistance;
+                if (car2CheckPoint < car1CheckPoint)
+                {
+                    return true;
+                }
+                else
+                {
+                    return car2CheckPointDistance > car1CheckPointDistance;
+                }
             }
         }
 
+        return true;
     }
-
 
 }

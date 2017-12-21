@@ -29,8 +29,12 @@ public class lvlManager : MonoBehaviour
 
     public void HideButton(Button button )
     {
-        button.enabled = false;
-        button.GetComponentInChildren<CanvasRenderer>().SetAlpha(0);
+        if(button != null)
+        {
+            button.enabled = false;
+            button.GetComponentInChildren<CanvasRenderer>().SetAlpha(0);
+        }
+       
     }
 
     public void SetTrack(string trackName)

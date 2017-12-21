@@ -156,6 +156,7 @@ public class CarBehavior : MonoBehaviour
     {
         if (IsCheckPoint(otherObject))
         {
+           
             string checkPointNumber = otherObject.tag.Split('_')[1];
             switch (checkPointNumber)
             {
@@ -329,29 +330,62 @@ public class CarBehavior : MonoBehaviour
     private void CheckIfRaceIsOver(Collider checkPoint)
     {
 
+        string correctText ="";
+
+        if (nroplayer == 1)
+        {
+            correctText = "OneLapText";
+        }
+        else if (nroplayer == 2)
+        {
+            correctText = "TwoLapText";
+        }
+        else if (nroplayer == 3)
+        {
+            correctText = "ThreeLapText";
+        }
+        else if (nroplayer == 4)
+        {
+            correctText = "FourLapText";
+        }
+
+
         if (lapCounter == lapNumbers)
         {
-            int position = checkPoint.GetComponent<CheckPointBehavior>().nextPos;
-            if (position == 1)
+            if(RaceData.RaceDataHolder.isNew.NumberOfPlayers != 1)
             {
-                middleText.text = position + "st";
+                int position = checkPoint.GetComponent<CheckPointBehavior>().nextPos;
+                if (position == 1)
+                {
+                    GameObject.FindGameObjectWithTag(correctText).GetComponent<Text>().text = position + "st";
+                }
+                if (position == 2)
+                {
+                    GameObject.FindGameObjectWithTag(correctText).GetComponent<Text>().text = position + "nd";
+                }
+                if (position == 3)
+                {
+                    GameObject.FindGameObjectWithTag(correctText).GetComponent<Text>().text = position + "rd";
+                }
+                if (position == 4)
+                {
+                    GameObject.FindGameObjectWithTag(correctText).GetComponent<Text>().text = position + "th";
+
+                }
+                checkPoint.GetComponent<CheckPointBehavior>().SendMessage("AddNextPos", 1);
+                controlsEnabledEnd = false;
+                finished++;
+                print("finished ahora es: " + finished);
             }
-            if (position == 2)
+            else
             {
-                middleText.text = position + "nd";
-            }
-            if (position == 3)
-            {
-                middleText.text = position + "rd";
-            }
-            if (position == 4)
-            {
-                middleText.text = position + "th";
+                middleText.text = "1st";
+                controlsEnabledEnd = false;
+                finished++;
+                print("finished ahora es: " + finished);
 
             }
-            checkPoint.GetComponent<CheckPointBehavior>().SendMessage("AddNextPos", 1);
-            controlsEnabledEnd = false;
-            finished++;
+
             UpdateTrackTimes();
         }
     }
