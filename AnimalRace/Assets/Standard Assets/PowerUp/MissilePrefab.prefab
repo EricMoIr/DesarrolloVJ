@@ -55,7 +55,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4931272993369710}
   - component: {fileID: 114099598600072550}
-  - component: {fileID: 195866150386792232}
   - component: {fileID: 65500892150409372}
   m_Layer: 0
   m_Name: MissilePrefab
@@ -293,25 +292,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f7877dfc54d39458bd986fb1b3abf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
---- !u!195 &195866150386792232
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1871527286155112}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  speed: 60

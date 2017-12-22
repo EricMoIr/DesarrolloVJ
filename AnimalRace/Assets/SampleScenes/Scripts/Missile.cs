@@ -1,8 +1,14 @@
-﻿using Assets.Scripts.Controllers;
+﻿using System;
+using Assets.Scripts.Controllers;
 using UnityEngine;
 
 internal class Missile : SpecialPower
 {
+    public override string GetName()
+    {
+        return "Misil";
+    }
+
     public override string ToString()
     {
         return "MissilePrefab";
@@ -11,9 +17,8 @@ internal class Missile : SpecialPower
     internal override void Activate(CarBehavior car)
     {
         GameObject missile = ObjectPooler.GetInstance().GetInactiveObjectOfType(ToString());
-        float missileLengthHorizontally = 0f;//missile.GetComponent<Renderer>().bounds.extents.z;
-        missile.transform.position = car.GetLauncherPosition() + (car.transform.forward * missileLengthHorizontally);
-        missile.transform.forward = car.transform.forward;
+        missile.transform.position = car.missileLauncher.position;
+        missile.transform.forward = car.missileLauncher.forward;
         missile.SetActive(true);
     }
 }

@@ -79,6 +79,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1081744120052002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4974016893263088}
+  m_Layer: 0
+  m_Name: MineLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1099468021357436
 GameObject:
   m_ObjectHideFlags: 1
@@ -259,6 +274,21 @@ GameObject:
   - component: {fileID: 4686177604672340}
   m_Layer: 0
   m_Name: CameraFocusPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1426825152151078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4056101046666728}
+  m_Layer: 0
+  m_Name: MissileLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,6 +510,7 @@ GameObject:
   - component: {fileID: 114596365387662220}
   - component: {fileID: 65737663813643422}
   - component: {fileID: 114322358385231522}
+  - component: {fileID: 114551618215349324}
   m_Layer: 0
   m_Name: SharkPrefab
   m_TagString: Player
@@ -521,6 +552,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4056101046666728
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1426825152151078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 1, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4544381438700746}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4084030773234772
 Transform:
   m_ObjectHideFlags: 1
@@ -750,7 +794,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1879474325252254}
   m_LocalRotation: {x: -0, y: -0.71109974, z: -0, w: -0.7030912}
-  m_LocalPosition: {x: 140.57452, y: 38.31236, z: 491.27798}
+  m_LocalPosition: {x: 150, y: 38, z: 490.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4780089260518300}
@@ -759,6 +803,8 @@ Transform:
   - {fileID: 4597819120719134}
   - {fileID: 4086794806830880}
   - {fileID: 4840016299130532}
+  - {fileID: 4056101046666728}
+  - {fileID: 4974016893263088}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -269.351, z: 0}
@@ -913,6 +959,19 @@ Transform:
   m_Father: {fileID: 4086794806830880}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4974016893263088
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1081744120052002}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 1, z: -3.23}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 4544381438700746}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4976925125317416
 Transform:
   m_ObjectHideFlags: 1
@@ -1023,7 +1082,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b93753a3eb6b23742b5195016ca47cd9, type: 2}
+  - {fileID: 2100000, guid: b4254e623fab26548b1fc1c28e209e19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1119,7 +1178,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b93753a3eb6b23742b5195016ca47cd9, type: 2}
+  - {fileID: 2100000, guid: b4254e623fab26548b1fc1c28e209e19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1189,7 +1248,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f5bce3752b736e64ab7086b9a8417041, type: 2}
+  - {fileID: 2100000, guid: b4254e623fab26548b1fc1c28e209e19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1317,7 +1376,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f5bce3752b736e64ab7086b9a8417041, type: 2}
+  - {fileID: 2100000, guid: b4254e623fab26548b1fc1c28e209e19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1477,7 +1536,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f5bce3752b736e64ab7086b9a8417041, type: 2}
+  - {fileID: 2100000, guid: b4254e623fab26548b1fc1c28e209e19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2026,8 +2085,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1dd3e38d2cb54b45898cfbfac4364ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasShield: 0
+  HasTurbo: 0
+  MineLauncher: {fileID: 4974016893263088}
   powerUps: {fileID: 11400000, guid: e533b4fe675cba647861da2cb5ed511d, type: 2}
+  playerName: Shark
+  missileLauncher: {fileID: 4056101046666728}
   FIRE_AXIS: Fire2
+  lapNumbers: 1
+  nroplayer: 2
+  PAUSE_AXIS: Pause2
+  pauseMenu: {fileID: 0}
 --- !u!114 &114338529517140306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2079,6 +2147,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 1693874131785460}
+--- !u!114 &114551618215349324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1879474325252254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e201cf87a2cb5254d8b1cab8ce03e9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberPlayer: 2
 --- !u!114 &114596365387662220
 MonoBehaviour:
   m_ObjectHideFlags: 1

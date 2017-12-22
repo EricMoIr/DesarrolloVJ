@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 146957837755204398}
   - component: {fileID: 82032011974337958}
   - component: {fileID: 114219059852028062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WheelHubFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4496121747053138}
   - component: {fileID: 33248220915697840}
   - component: {fileID: 23254635928178694}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyCarSuspensionFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,9 +60,25 @@ GameObject:
   - component: {fileID: 114277441468410302}
   - component: {fileID: 65560916573176956}
   - component: {fileID: 114068292902719136}
-  m_Layer: 0
+  - component: {fileID: 114005548861895386}
+  m_Layer: 9
   m_Name: KoalaPrefab
   m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1073480290072876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4386454314204080}
+  m_Layer: 9
+  m_Name: MissileLauncher
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +91,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4856687368108626}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WaypointTargetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +108,7 @@ GameObject:
   - component: {fileID: 4621460511262034}
   - component: {fileID: 33017667781256630}
   - component: {fileID: 23541768012205440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyCarWheelRearRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +123,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4238882397780492}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +140,7 @@ GameObject:
   - component: {fileID: 4964221850461176}
   - component: {fileID: 33083088268503290}
   - component: {fileID: 23779421865961998}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyCarWheelFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +157,7 @@ GameObject:
   - component: {fileID: 4476631064634586}
   - component: {fileID: 198679191548160640}
   - component: {fileID: 199681211837358994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ParticleBurnoutSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +172,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4076392342672938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CameraFocusPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +189,7 @@ GameObject:
   - component: {fileID: 4448414282516628}
   - component: {fileID: 33744337989749222}
   - component: {fileID: 23939125279406534}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +206,7 @@ GameObject:
   - component: {fileID: 4943341615871984}
   - component: {fileID: 33154446534765786}
   - component: {fileID: 23184277927115908}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Uniforme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +223,7 @@ GameObject:
   - component: {fileID: 4156630310767296}
   - component: {fileID: 33865523826502898}
   - component: {fileID: 23597226175049950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Box001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +241,7 @@ GameObject:
   - component: {fileID: 146231059458893370}
   - component: {fileID: 82409446833795940}
   - component: {fileID: 114558864372303136}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WheelHubFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +258,7 @@ GameObject:
   - component: {fileID: 4669091917252666}
   - component: {fileID: 33278707314665714}
   - component: {fileID: 23758332393241102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,8 +276,23 @@ GameObject:
   - component: {fileID: 33559746305922226}
   - component: {fileID: 65615465482250136}
   - component: {fileID: 23980998497559402}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ColliderBodyForBreak
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1521263760092136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4683492442333546}
+  m_Layer: 9
+  m_Name: MineLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,7 +306,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4709933937050664}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Helpers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +321,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4754797371208598}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +336,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4972221869045752}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +353,7 @@ GameObject:
   - component: {fileID: 4250915590525538}
   - component: {fileID: 33960472898103988}
   - component: {fileID: 23403096980763008}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Nariz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +372,7 @@ GameObject:
   - component: {fileID: 23127825387120436}
   - component: {fileID: 114256515479432766}
   - component: {fileID: 114224948063069034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyCarMudGuardFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +389,7 @@ GameObject:
   - component: {fileID: 4565758924380720}
   - component: {fileID: 33388209229106016}
   - component: {fileID: 23932532024283044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyCarSuspensionFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +406,7 @@ GameObject:
   - component: {fileID: 4515937398186456}
   - component: {fileID: 33657189327402636}
   - component: {fileID: 23596793036192360}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Box002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +421,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4015233177073620}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WheelsHubs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +440,7 @@ GameObject:
   - component: {fileID: 23107096163486782}
   - component: {fileID: 114963367915758404}
   - component: {fileID: 114386603074669602}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyCarMudGuardFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +458,7 @@ GameObject:
   - component: {fileID: 146143110273006896}
   - component: {fileID: 82867058383644206}
   - component: {fileID: 114041817326888846}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WheelHubRearLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +475,7 @@ GameObject:
   - component: {fileID: 4435378283599304}
   - component: {fileID: 33539889090599216}
   - component: {fileID: 23847847561243642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyCarWheelFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +493,7 @@ GameObject:
   - component: {fileID: 33655960445826798}
   - component: {fileID: 23705377578229554}
   - component: {fileID: 95727123406566062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Vehiculo_Tanque
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +510,7 @@ GameObject:
   - component: {fileID: 4468228678094102}
   - component: {fileID: 33681582625450530}
   - component: {fileID: 23152736099990648}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyCarWheelRearLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +528,7 @@ GameObject:
   - component: {fileID: 146598667905082330}
   - component: {fileID: 82192867362467466}
   - component: {fileID: 114369254431889464}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WheelHubRearRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,6 +657,19 @@ Transform:
   m_Father: {fileID: 4015233177073620}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4386454314204080
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073480290072876}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4517078654569396}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4435378283599304
 Transform:
   m_ObjectHideFlags: 1
@@ -711,7 +755,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1061741758993724}
   m_LocalRotation: {x: -0, y: -0.71109974, z: -0, w: -0.7030912}
-  m_LocalPosition: {x: 144.32, y: 38.319775, z: 496.13}
+  m_LocalPosition: {x: 150, y: 38, z: 500.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4238882397780492}
@@ -720,6 +764,8 @@ Transform:
   - {fileID: 4709933937050664}
   - {fileID: 4754797371208598}
   - {fileID: 4714018718583668}
+  - {fileID: 4386454314204080}
+  - {fileID: 4683492442333546}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -269.351, z: 0}
@@ -761,6 +807,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4714018718583668}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4683492442333546
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521263760092136}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 1, z: -2.39}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 4517078654569396}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4688998099803768
 Transform:
@@ -1018,7 +1077,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 40ee781939a9da848b72fd78452bd669, type: 2}
+  - {fileID: 2100000, guid: 1b864a5b446a4c14cab347528de35e82, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1082,7 +1141,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b93753a3eb6b23742b5195016ca47cd9, type: 2}
+  - {fileID: 2100000, guid: 1124e78ba9ec1c94296589b74cded94c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1146,7 +1205,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b93753a3eb6b23742b5195016ca47cd9, type: 2}
+  - {fileID: 2100000, guid: 338dbf9d35df70d428453cc78f8eaa18, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1178,7 +1237,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b93753a3eb6b23742b5195016ca47cd9, type: 2}
+  - {fileID: 2100000, guid: 468c7b6d26c30514c9c5b899a77e0246, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1371,7 +1430,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b93753a3eb6b23742b5195016ca47cd9, type: 2}
+  - {fileID: 2100000, guid: 338dbf9d35df70d428453cc78f8eaa18, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1910,6 +1969,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114005548861895386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061741758993724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e201cf87a2cb5254d8b1cab8ce03e9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberPlayer: 1
 --- !u!114 &114041817326888846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1934,8 +2005,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1dd3e38d2cb54b45898cfbfac4364ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasShield: 0
+  HasTurbo: 0
+  MineLauncher: {fileID: 4683492442333546}
   powerUps: {fileID: 11400000, guid: e533b4fe675cba647861da2cb5ed511d, type: 2}
+  playerName: Koala
+  missileLauncher: {fileID: 4386454314204080}
   FIRE_AXIS: Fire1
+  lapNumbers: 1
+  nroplayer: 1
+  PAUSE_AXIS: Pause1
+  pauseMenu: {fileID: 0}
 --- !u!114 &114188668992751834
 MonoBehaviour:
   m_ObjectHideFlags: 1

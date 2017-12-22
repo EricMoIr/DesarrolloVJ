@@ -9,6 +9,9 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class CarBehavior : MonoBehaviour
 {
+    public bool HasShield = false;
+    public bool HasTurbo = false;
+    public Transform MineLauncher;
     [SerializeField]
     private PowerUpsHolderObject powerUps;
     [SerializeField]
@@ -18,11 +21,13 @@ public class CarBehavior : MonoBehaviour
     private float nextCheckPointDistance;
     private bool[] activeCheckpoints;
     private List<AbnormalStatus> abnormalStatuses = new List<AbnormalStatus>();
+    private DateTime powerUpGottenTime;
+    private TimeSpan POWER_UP_WAITING_TIME = new TimeSpan(0, 0, 0);
     private SpecialPower myPowerUp;
     [SerializeField]
-    private Transform missileLauncher;
+    public Transform missileLauncher;
     static public bool controlsEnabled;
-    private bool controlsEnabledEnd=true;
+    private bool controlsEnabledEnd = true;
     private int currentPosition;
     [SerializeField]
     private string FIRE_AXIS;
@@ -35,7 +40,12 @@ public class CarBehavior : MonoBehaviour
     [SerializeField]
     int nroplayer;
     float lapTime;
-    static public int finished=0;
+    static public int finished = 0;
+    [SerializeField]
+    private string PAUSE_AXIS;
+    [SerializeField]
+    private GameObject pauseMenu;
+    private GameObject lastPowerImage;
 
     public PowerUpsHolderObject PowerUps { get { return powerUps; } }
 
@@ -82,7 +92,6 @@ public class CarBehavior : MonoBehaviour
         StartCoroutine(BeginCountDown());
         currentPosition = 1;
     }
-
     internal void ChangeMaxSpeed(float multiplier)
     {
         CarController stolenScript = gameObject.GetComponent<CarController>();
@@ -90,9 +99,13 @@ public class CarBehavior : MonoBehaviour
         if (newMaxSpeed <= 150)
         {
             stolenScript.MaxSpeed = newMaxSpeed;
+            stolenScript.Torque = 5000;
         }
         else
+        {
+            stolenScript.MaxSpeed = 150;
             stolenScript.Torque = stolenScript.Torque * multiplier;
+        }
     }
 
     public void SetCurrentPosition(int newPos)
@@ -106,7 +119,8 @@ public class CarBehavior : MonoBehaviour
     {
         FireSpecialPower();
         ReduceAbnormalStatusTime();
-        if (controlsEnabled && controlsEnabledEnd) 
+        Pause();
+        if (controlsEnabled && controlsEnabledEnd)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
@@ -140,6 +154,32 @@ public class CarBehavior : MonoBehaviour
             positionText.text += "th";
     }
 
+    private DateTime pressedTime;
+    private void Pause()
+    {
+        if (Input.GetButtonDown(PAUSE_AXIS))
+        {
+            if (DateTime.Now < pressedTime + new TimeSpan(0, 0, 1) && pressedTime != DateTime.MinValue)
+                return;
+            pressedTime = DateTime.Now;
+            if (IsPaused())
+            {
+                Time.timeScale = 1f;
+                pauseMenu.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                pauseMenu.SetActive(true);
+            }
+        }
+    }
+
+    private bool IsPaused()
+    {
+        return false;//return pauseMenu.activeInHierarchy;
+    }
+
     void OnTriggerEnter(Collider otherObject)
     {
         PowerUpBoxTriggerEnter(otherObject);
@@ -156,7 +196,7 @@ public class CarBehavior : MonoBehaviour
     {
         if (IsCheckPoint(otherObject))
         {
-           
+
             string checkPointNumber = otherObject.tag.Split('_')[1];
             switch (checkPointNumber)
             {
@@ -198,10 +238,11 @@ public class CarBehavior : MonoBehaviour
     {
         if (Input.GetAxisRaw(FIRE_AXIS) != 0)
         {
-            if (myPowerUp != null)
+            if (myPowerUp != null && DateTime.Now > powerUpGottenTime + POWER_UP_WAITING_TIME)
             {
                 myPowerUp.Activate(this);
                 myPowerUp = null;
+                lastPowerImage.SetActive(false);
             }
         }
     }
@@ -212,6 +253,18 @@ public class CarBehavior : MonoBehaviour
             if (CanHaveNewPowerUp())
             {
                 myPowerUp = SpecialPowerBuilder.CreateRandomPower(this);
+                powerUpGottenTime = DateTime.Now;
+                GameObject[] canvases = new GameObject[2];
+                string[] fu = new string[] { "TwoPlayerCanvas", "FourPlayerCanvas" };
+                canvases[0] = GameObject.Find("TwoPlayerCanvas");
+                canvases[1] = GameObject.Find("FourPlayerCanvas");
+                for (int i = 0; i < canvases.Length; i++)
+                {
+                    if (!canvases[i]) continue;
+                    string a = fu[i] + "/UI/PowerUp" + nroplayer + "/" + myPowerUp.GetName();
+                    lastPowerImage = GameObject.Find(fu[i] + "/UI/PowerUp" + nroplayer + "/" + myPowerUp.GetName());
+                    lastPowerImage.SetActive(true);
+                }
             }
             RemoveObject(otherObject);
         }
@@ -330,7 +383,7 @@ public class CarBehavior : MonoBehaviour
     private void CheckIfRaceIsOver(Collider checkPoint)
     {
 
-        string correctText ="";
+        string correctText = "";
 
         if (nroplayer == 1)
         {
@@ -352,7 +405,7 @@ public class CarBehavior : MonoBehaviour
 
         if (lapCounter == lapNumbers)
         {
-            if(RaceData.RaceDataHolder.isNew.NumberOfPlayers != 1)
+            if (RaceData.RaceDataHolder.isNew.NumberOfPlayers != 1)
             {
                 int position = checkPoint.GetComponent<CheckPointBehavior>().nextPos;
                 if (position == 1)

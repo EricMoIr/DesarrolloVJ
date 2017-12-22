@@ -17,9 +17,12 @@ internal class Turbo : SpecialPower, AbnormalStatus
 
     internal override void Activate(CarBehavior car)
     {
+        if (car.HasTurbo)
+            return;
         remainingDuration = TURBO_DURATION;
         car.AddAbnormalStatus(this);
         car.ChangeMaxSpeed(TURBO_MULTIPLIER);
+        car.HasTurbo = true;
     }
 
     void AbnormalStatus.Deactivate(CarBehavior car)
@@ -36,5 +39,10 @@ internal class Turbo : SpecialPower, AbnormalStatus
     public override string ToString()
     {
         return "TurboPrefab";
+    }
+
+    public override string GetName()
+    {
+        return "Turbo";
     }
 }

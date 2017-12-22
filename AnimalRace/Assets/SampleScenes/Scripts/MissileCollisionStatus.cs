@@ -42,7 +42,7 @@ public class MissileCollisionStatus : AbnormalStatus
     private void ShowStars(CarBehavior car)
     {
         stars =
-            ObjectPooler.GetInstance().GetInactiveObjectOfType("StunnedStatePrefab");
+            ObjectPooler.GetInstance().GetInactiveObjectOfType("StunnedStatusPrefab");
         Vector3 starsPosition = car.transform.position;
         starsPosition.y += car.GetComponent<BoxCollider>().size.y;
         stars.transform.position = starsPosition;

@@ -24,6 +24,7 @@ public class MissileBehavior : MonoBehaviour
         if (collisioned.gameObject.tag == "Player")
         {
             CarBehavior car = collisioned.gameObject.GetComponent<CarBehavior>();
+            if (car.HasShield) return;
             MissileCollisionStatus status = new MissileCollisionStatus();
             status.Activate(car);
             car.AddAbnormalStatus(status);
